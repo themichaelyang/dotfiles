@@ -49,7 +49,8 @@ set mouse=a
 
 "Key Remap
 imap jk <Esc>
-"U for undo
+
+"U for redo
 noremap U <C-R>
 
 "Auto turn on/off paste mode to preserve indentation on paste
