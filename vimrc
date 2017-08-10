@@ -1,17 +1,17 @@
-"Plugins
+"Plugins (vim-plug)
 call plug#begin('~/.vim/bundle')
-Plug 'slim-template/vim-slim'
-Plug 'flazz/vim-colorschemes'
-Plug 'itchyny/lightline.vim'
-Plug 'scrooloose/nerdtree'
-Plug 'hail2u/vim-css3-syntax'
-Plug 'tpope/vim-commentary'
+Plug 'flazz/vim-colorschemes'       "Colorschemes
+Plug 'itchyny/lightline.vim'        "Status bar
+Plug 'scrooloose/nerdtree'          "Directory Tree
+Plug 'hail2u/vim-css3-syntax'       "CSS3 Syntax
+Plug 'tpope/vim-commentary'         "Comments! (gcc to toggle comment)
+Plug 'terryma/vim-multiple-cursors' "Multiple cursors
 call plug#end()
 
 "Syntax Highlighting
 syntax on
 colorscheme solarized
-"set t_Co=256
+"set t_Co=256     "24 bit color
 
 "Whitespace
 set expandtab     "Soft tabs
@@ -27,18 +27,19 @@ filetype plugin indent on       "Turn on filetype detection
 
 "Editor Appearance
 set number        "Line numbers
-set showmode     "Show current mode down the bottom
+set showmode      "Show current mode down the bottom
 set laststatus=2  "Show statusline
 let g:lightline = {
       \ 'colorscheme': 'solarized',
       \ }
-"autocmd vimenter * NERDTree
+"autocmd vimenter * NERDTree  "Automatically enter NERDTree
 
 "Under the Hood
-set autoread      "Reload files changed outside vim
-set hidden        "http://items.sjbach.com/319/configuring-vim-right
-"set exrc          "Enable project specific .vimrc files
-set secure        "Disable unsafe commands in project .vimrc files
+set encoding=utf-8  "Change default encoding to utf-8
+set autoread        "Reload files changed outside vim
+set hidden          "http://items.sjbach.com/319/configuring-vim-right
+set secure          "Disable unsafe commands in project .vimrc files
+autocmd BufEnter * silent! lcd %:p:h  "Automatically change working directory to current
 
 "Long Lines
 set nowrap
@@ -47,7 +48,7 @@ set sidescroll=1
 "Enable Mouse
 set mouse=a
 
-"Key Remap
+"jk for Esc
 imap jk <Esc>
 
 "U for redo
