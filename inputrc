@@ -1,3 +1,4 @@
+# set up vim keybindings!
 set editing-mode vi
 
 $if mode=vi
@@ -7,3 +8,6 @@ $if mode=vi
   set keymap vi-insert
   "jk": vi-movement-mode
 $endif
+
+# single tab for suggestions
+set show-all-if-ambiguous on
