@@ -6,7 +6,13 @@ To start, set up symlinks:
 
 ```
 $ chmod +x link.sh
-$ run ./link.sh
+$ ./link.sh
+```
+
+Want to reset your dotfiles? This script will remove all symlinked dotfiles (".*") in your home directory:
+```
+$ chmod +x unlink.sh
+$ ./unlink.sh
 ```
 
 Add your own private dotfiles in:
