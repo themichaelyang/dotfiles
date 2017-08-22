@@ -9,8 +9,9 @@ alias list="ls -lA"
 
 # cd aliases
 alias c="cd"
+alias up="cd .."
 alias ..="cd .."
-alias ....="cd ../.."
+alias ...="cd ../.."
 
 # Disable rm, which is very dangerous!
 # Always prefer "trash", or safely rm with "remove"
