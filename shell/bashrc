@@ -1,13 +1,25 @@
-ssh-add -K
+# ssh-add -K
 # alias dev="ssh"
-alias remove='/bin/rm -irv'
-alias rm=""
-# alias ls="ls -G"
+
+# ls aliases
+alias l="ls -GFh"
 alias ls="ls -GFh"
 alias la="ls -A"
-alias rmswp='find -name ".*.sw?" -delete'
+alias list="ls -lA"
+
+# cd aliases
+alias c="cd"
+alias ..="cd .."
+alias ....="cd ../.."
+
+# Disable rm, which is very dangerous!
+# Always prefer "trash", or safely rm with "remove"
+alias remove='/bin/rm -irv'
+alias rm='echo rm is disabled! Use the commands \"trash\" or \"remove\".'
+
+# Deletes all vim swap files and .DS_Store
+alias tidy='find . \( -name ".*.sw?" -o -name ".DS_Store" \) -delete'
 
 # set -o vi
 # bind '"jk":vi-movement-mode'
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+# [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
