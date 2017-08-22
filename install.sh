@@ -16,6 +16,15 @@ function link {
     fi 
 }
 
+# Bash!
+link shell/bashrc .bashrc
+link shell/bash_profile .bash_profile
 
+# Input
+link shell/inputrc .inputrc
+link shell/editrc .editrc
+
+# Vim
 link vim/vimrc .vimrc
+
 
