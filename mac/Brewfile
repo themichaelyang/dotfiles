@@ -1,0 +1,28 @@
+tap "caskroom/cask"
+tap "homebrew/bundle"
+tap "homebrew/core"
+
+# Utils
+brew "coreutils"
+brew "trash"
+brew "wget"
+brew "cowsay"
+
+# Dev
+brew "git"
+brew "node"
+# Note: both python 2 and 3
+# 1) python -> python2; python3 -> python3
+# 2) pip -> pip3; pip2 -> pip2
+# Could set some aliases
+# brew "python"
+# brew "python3"
+
+# Apps
+cask "google-chrome"
+cask "firefox"
+cask "spectacle"
+cask "flux"
+cask "atom"
+cask "iterm2"
+cask "spotify"

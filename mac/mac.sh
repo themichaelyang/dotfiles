@@ -1,3 +1,6 @@
+# Increase trackpad sensitivity (requires restart?)
+defaults write NSGlobalDomain com.apple.trackpad.scaling 3.0
+
 # Disable automatic capitalization as it’s annoying when typing code
 defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
 
