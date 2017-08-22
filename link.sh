@@ -27,5 +27,9 @@ link shell/editrc .editrc
 # Vim
 link vim/vimrc .vimrc
 
-echo "Finished creating symlinks. Don't forget to restart your terminal"
+# Git
+link git/gitconfig .gitconfig
+link git/gitprivate .gitprivate
+
+echo "Finished creating symlinks. Don't forget to restart your terminal."
 
