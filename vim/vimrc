@@ -55,8 +55,8 @@ imap jk <Esc>
 "U for redo
 noremap U <C-R>
 
-":CDC to cd into current directory
-command CDC cd %:p:h<CR>:pwd<CR>
+":CDC to locally cd into directory of current file
+command CDC lcd %:p:h<CR>:pwd<CR>
 
 "Auto turn on/off paste mode to preserve indentation on paste
 "https://coderwall.com/p/if9mda/automatically-set-paste-mode-in-vim-when-pasting-in-insert-mode
