@@ -9,7 +9,8 @@ Plug 'terryma/vim-multiple-cursors' "Multiple cursors
 call plug#end()
 
 "Syntax Highlighting
-syntax on
+syntax enable
+set background=dark
 colorscheme solarized
 "set t_Co=256     "24 bit color
 
