@@ -19,6 +19,7 @@ function link {
 # Bash!
 link shell/bashrc .bashrc
 link shell/bash_profile .bash_profile
+link shell/bashprivate .bashprivate
 
 # Input
 link shell/inputrc .inputrc

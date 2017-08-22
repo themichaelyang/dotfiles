@@ -1,6 +1,12 @@
 # Increase trackpad sensitivity (requires restart?)
 defaults write NSGlobalDomain com.apple.trackpad.scaling 3.0
 
+# Increase key repeat rate
+defaults write NSGlobalDomain KeyRepeat -int 1
+
+# Reduce delay before key repeat
+defaults write NSGlobalDomain InitialKeyRepeat -int 10 
+
 # Disable automatic capitalization as it’s annoying when typing code
 defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
 

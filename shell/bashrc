@@ -1,5 +1,5 @@
-# ssh-add -K
-# alias dev="ssh"
+# source private dotfile
+source ~/.bashprivate
 
 # ls aliases
 alias l="ls -GFh"
