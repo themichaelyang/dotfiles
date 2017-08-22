@@ -6,8 +6,8 @@ BASEDIR+="/"
 HOMEDIR=$HOME/
 
 function link {
-    origin=$BASEDIR$1
-    target=$HOMEDIR$2    
+    local origin=$BASEDIR$1
+    local target=$HOMEDIR$2    
 
     if ! [[ -e "$target" ]]; then
 	      ln -s $origin $target && echo -e "\033[0;32mADDED:\033[0m $target."
@@ -26,5 +26,4 @@ link shell/editrc .editrc
 
 # Vim
 link vim/vimrc .vimrc
-
 
