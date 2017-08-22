@@ -39,7 +39,7 @@ set encoding=utf-8  "Change default encoding to utf-8
 set autoread        "Reload files changed outside vim
 set hidden          "http://items.sjbach.com/319/configuring-vim-right
 set secure          "Disable unsafe commands in project .vimrc files
-autocmd BufEnter * silent! lcd %:p:h  "Automatically change working directory to current
+autocmd BufEnter * silent! lcd %:p:h  "Automatically change working directory to current file
 
 "Long Lines
 set nowrap
@@ -53,6 +53,9 @@ imap jk <Esc>
 
 "U for redo
 noremap U <C-R>
+
+":CDC to cd into current directory
+command CDC cd %:p:h<CR>:pwd<CR>
 
 "Auto turn on/off paste mode to preserve indentation on paste
 "https://coderwall.com/p/if9mda/automatically-set-paste-mode-in-vim-when-pasting-in-insert-mode
