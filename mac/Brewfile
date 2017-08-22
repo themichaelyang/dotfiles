@@ -9,8 +9,10 @@ brew "wget"
 brew "cowsay"
 
 # Dev
+brew 'bash'
 brew "git"
 brew "node"
+brew "vim" args: ["with-override-system-vi"]
 # Note: both python 2 and 3
 # 1) python -> python2; python3 -> python3
 # 2) pip -> pip3; pip2 -> pip2
