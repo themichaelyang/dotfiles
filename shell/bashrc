@@ -19,7 +19,7 @@ alias remove='/bin/rm -irv'
 alias rm='echo rm is disabled! Use the commands \"trash\" or \"remove\".'
 
 # Deletes all vim swap files and .DS_Store
-alias tidy='find . \( -name ".*.sw?" -o -name ".DS_Store" \) -delete'
+alias tidy='find . \( -name ".*.sw?" -or -name ".DS_Store" \) -delete'
 
 # set -o vi
 # bind '"jk":vi-movement-mode'
