@@ -1,3 +1,5 @@
+#!/bin/bash
+
 echo "WARNING: This script will delete all symlinked dotfiles in ~."
 read -p "Proceed? (y/n): " yn
 case $yn in
