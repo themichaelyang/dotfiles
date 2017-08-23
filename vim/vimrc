@@ -63,6 +63,9 @@ noremap U <C-R>
 nnoremap d "_d
 vnoremap d "_d
 
+"Set <leader> to ,
+let mapleader = ","
+
 ":CDC to locally cd into directory of current file
 command CDC lcd %:p:h<CR>:pwd<CR>
 

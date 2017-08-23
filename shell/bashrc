@@ -13,6 +13,9 @@ alias up="cd .."
 alias ..="cd .."
 alias ...="cd ../.."
 
+# bookmarks
+alias dot="cd ~/dotfiles"
+
 # Disable rm, which is very dangerous!
 # Always prefer "trash", or safely rm with "remove"
 alias remove='/bin/rm -irv'
