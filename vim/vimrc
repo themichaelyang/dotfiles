@@ -67,6 +67,12 @@ vnoremap d "_d
 "Set <leader> to ,
 let mapleader = ","
 
+"Map [[ and ]] to { and } (move paragraph)
+nnoremap [[ {
+vnoremap [[ }
+nnoremap ]] }
+vnoremap ]] }
+
 ":CDC to locally cd into directory of current file
 command CDC lcd %:p:h<CR>:pwd<CR>
 
