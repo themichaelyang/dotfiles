@@ -21,6 +21,9 @@ set softtabstop=2
 set tabstop=2
 set shiftwidth=2
 
+"Set whitespace based on filetype
+autocmd Filetype python setlocal ts=4 sw=4 sts=0 expandtab "4 space tabs in python
+
 "Indentation
 set autoindent                  "Auto Indentation
 set smartindent
@@ -54,6 +57,10 @@ imap jk <Esc>
 
 "U for redo
 noremap U <C-R>
+
+"Delete without yanking
+nnoremap <leader>d "_d
+vnoremap <leader>d "_d
 
 ":CDC to locally cd into directory of current file
 command CDC lcd %:p:h<CR>:pwd<CR>
