@@ -53,7 +53,8 @@ set sidescroll=1
 set mouse=a
 
 "jk for Esc
-imap jk <Esc>
+inoremap jk <Esc>
+xnoremap jk <Esc>
 
 "U for redo
 noremap U <C-R>
