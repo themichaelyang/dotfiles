@@ -7,5 +7,6 @@
   cm = commit -m
   redo = commit --amend
   find = ls-files | find
+  a = "!git add . && echo $PWD added to git."
   all = "!git add . && echo $PWD added to git."
   stat = status

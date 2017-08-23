@@ -45,6 +45,9 @@ set hidden          "http://items.sjbach.com/319/configuring-vim-right
 set secure          "Disable unsafe commands in project .vimrc files
 autocmd BufEnter * silent! lcd %:p:h  "Automatically change working directory to current file
 
+"Source ~/.bashrc in :sh
+set shell=bash\ --login
+
 "Long Lines
 set nowrap
 set sidescroll=1

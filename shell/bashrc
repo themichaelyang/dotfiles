@@ -2,27 +2,49 @@
 source ~/.bashprivate
 
 # ls aliases
-alias l="ls -GFh"
-alias ls="ls -GFh"
-alias la="ls -A"
-alias list="ls -lA"
+alias l='ls -GFh'
+alias ls='ls -GFh'
+alias la='ls -A'
+alias list='ls -lA'
 
 # cd aliases
-alias c="cd"
-alias up="cd .."
-alias ..="cd .."
-alias ...="cd ../.."
+alias c='cd'
+alias up='cd ..'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias back='cd -'
 
 # bookmarks
-alias dot="cd ~/dotfiles"
+alias dotfiles="cd ~/dotfiles"
 
 # Disable rm, which is very dangerous!
 # Always prefer "trash", or safely rm with "remove"
 alias remove='/bin/rm -irv'
 alias rm='echo rm is disabled! Use the commands \"trash\" or \"remove\".'
 
+# force interactive cp and mv
+alias cp='cp -i'
+alias mv='mv -i'
+
+# make directory and switch into it
+# https://unix.stackexchange.com/questions/9123/is-there-a-one-liner-that-allows-me-to-create-a-directory-and-move-into-it-at-th
+mkcd () {
+  case "$1" in
+    */..|*/../) cd -- "$1";; # that doesn't make any sense unless the directory already exists
+    /*/../*) (cd "${1%/../*}/.." && mkdir -p "./${1##*/../}") && cd -- "$1";;
+    /*) mkdir -p "$1" && cd "$1";;
+    */../*) (cd "./${1%/../*}/.." && mkdir -p "./${1##*/../}") && cd "./$1";;
+    ../*) (cd .. && mkdir -p "${1#.}") && cd "$1";;
+    *) mkdir -p "./$1" && cd "./$1";;
+  esac
+}
+
 # Deletes all vim swap files and .DS_Store
-alias tidy='find . \( -name ".*.sw?" -or -name ".DS_Store" \) -delete'
+alias tidy='find . \( -name ".*.sw?" -or -name ".swp" -or -name ".DS_Store" \) -delete'
+
+# Prevent Ctrl-S and Ctrl-Q from hanging terminal
+# https://unix.stackexchange.com/questions/72086/ctrl-s-hang-terminal-emulator
+stty -ixon
 
 # set -o vi
 # bind '"jk":vi-movement-mode'
