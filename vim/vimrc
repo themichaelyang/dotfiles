@@ -64,10 +64,10 @@ inoremap <silent> <C-S> <C-O>:update<CR>
 "U for redo
 noremap U <C-R>
 
-"Delete without overwriting yank register
-"(Copy with x)
-nnoremap d "_d
-vnoremap d "_d
+"Delete with x without overwriting yank register
+"(Cut with d)
+nnoremap x "_x
+vnoremap x "_x
 
 "Set <leader> to ,
 let mapleader = ","
@@ -89,6 +89,17 @@ nnoremap <C-H> <C-W><C-H>
 
 ":CDC to locally cd into directory of current file
 command CDC lcd %:p:h<CR>:pwd<CR>
+
+"Strip trailing whitespaces on save
+"https://stackoverflow.com/questions/356126/how-can-you-automatically-remove-trailing-whitespace-in-vim
+fun! <SID>StripTrailingWhitespaces()
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    call cursor(l, c)
+endfun
+
+autocmd FileType c,cpp,java,php,ruby,python autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
 
 "Auto turn on/off paste mode to preserve indentation on paste
 "https://coderwall.com/p/if9mda/automatically-set-paste-mode-in-vim-when-pasting-in-insert-mode
