@@ -58,6 +58,11 @@ set mouse=a
 inoremap jk <Esc>
 xnoremap jk <Esc>
 
+"Ctrl+s to save
+noremap <silent> <C-S> :update<CR>
+vnoremap <silent> <C-S> <C-C>:update<CR>
+inoremap <silent> <C-S> <C-O>:update<CR>
+
 "U for redo
 noremap U <C-R>
 
