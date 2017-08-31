@@ -1,13 +1,19 @@
-# This file is included but gitignored for
-# private git configs (git user, etc)
+# private git configs (git user, etc) are included
+# but .gitignored
 [include]
   path = ~/.gitprivate
+[core]
+  excludesfile = ~/.gitignore-global
 [alias]
   remove = rm -r --cached .
   cm = commit -m
   redo = commit --amend
   find = ls-files | find
-  a = "!git add . && echo $PWD added to git."
-  all = "!git add . && echo $PWD added to git."
+  a = "!git add -A && echo $PWD added to git."
+  all = "!git add -A && echo $PWD added to git."
+  addnew = "!git add $(git ls-files -o --exclude-standard)"
   stat = status
   d = diff
+  user = config user.name
+  email = config user.email
+  hunk = add --patch
