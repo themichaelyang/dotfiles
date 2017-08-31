@@ -8,6 +8,7 @@ alias la='ls -A'
 alias list='ls -lA'
 
 # cd aliases
+alias ~='cd ~'
 alias c='cd'
 alias up='cd ..'
 alias ..='cd ..'
@@ -40,7 +41,8 @@ mkcd () {
 }
 
 # Deletes all vim swap files and .DS_Store
-alias tidy='find . \( -name ".*.sw?" -or -name ".swp" -or -name ".DS_Store" \) -delete'
+# TODO: put the clean into a list
+alias tidy='find . \( -name ".*.sw?" -or -name ".swp" -or -name ".DS_Store" \) -delete -print'
 
 # Prevent Ctrl-S and Ctrl-Q from hanging terminal
 # https://unix.stackexchange.com/questions/72086/ctrl-s-hang-terminal-emulator

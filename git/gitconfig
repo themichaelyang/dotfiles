@@ -11,7 +11,9 @@
   find = ls-files | find
   a = "!git add -A && echo $PWD added to git."
   all = "!git add -A && echo $PWD added to git."
-  addnew = "!git add $(git ls-files -o --exclude-standard)"
+  addnew = "!git add $(git ls-files -o --exclude-standard) && echo New files added to git."
+  s = status
+  st = status
   stat = status
   d = diff
   user = config user.name
