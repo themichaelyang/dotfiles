@@ -1,5 +1,7 @@
-# source private dotfile
-source ~/.bashprivate
+# source private dotfile (only if it exists)
+if [ -f ~/.bashprivate ]; then
+   source ~/.bashprivate
+fi
 
 # source bash prompt
 source ~/.bashprompt
