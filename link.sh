@@ -9,10 +9,14 @@ function link {
     local origin=$BASEDIR$1
     local target=$HOMEDIR$2
 
+    if ! [[ -f "$origin" ]]; then
+      echo -e "\033[0;31mERROR:\033[0m Origin $origin does not exist."; return;
+    fi
+
     if ! [[ -e "$target" ]]; then
         ln -s $origin $target && echo -e "\033[0;32mADDED:\033[0m $target."
     else
-        echo -e "\033[0;31mERROR:\033[0m Target $target already exists"
+        echo -e "\033[0;33mWARNING:\033[0m Target $target already exists."
     fi
 }
 
@@ -39,7 +43,8 @@ link git/gitconfig .gitconfig
 link git/gitignore-global .gitignore-global
 link git/gitprivate .gitprivate
 
+echo ""
 echo "Sourcing bashrc..."
 source ~/.bashrc
 
-echo "Finished creating symlinks."
+echo "Finished."
