@@ -24,6 +24,7 @@ echo "Setting up symlinks..."
 # Bash!
 link shell/bashrc .bashrc
 link shell/bash_profile .bash_profile
+link shell/bashprompt .bashprompt
 link shell/bashprivate .bashprivate
 
 # Input
@@ -35,8 +36,8 @@ link vim/vimrc .vimrc
 
 # Git
 link git/gitconfig .gitconfig
-link git/gitprivate .gitprivate
 link git/gitignore-global .gitignore-global
+link git/gitprivate .gitprivate
 
 echo "Sourcing bashrc..."
 source ~/.bashrc

@@ -1,6 +1,9 @@
 # source private dotfile
 source ~/.bashprivate
 
+# source bash prompt
+source ~/.bashprompt
+
 # ls aliases
 alias l='ls -GFh'
 alias ls='ls -GFh'
