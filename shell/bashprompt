@@ -1,14 +1,9 @@
+# Adapted from https://github.com/paulirish/dotfiles
+
 # Colors
 BOLD=$(tput bold)
 RESET=$(tput sgr0)
 BSET=${RESET}${BOLD}
-
-RED=$(tput setaf 1)
-GREEN=$(tput setaf 2)
-YELLOW=$(tput setaf 3)
-BLUE=$(tput setaf 4)
-MAGENTA=$(tput setaf 5)
-CYAN=$(tput setaf 6)
 
 # 256 color
 RED256=$(tput setaf 124)
@@ -17,7 +12,7 @@ YELLOW256=$(tput setaf 221)
 PURPLE256=$(tput setaf 162)
 CYAN256=$(tput setaf 37)
 
-# Git prompt (from https://github.com/paulirish/dotfiles)
+# Git prompt
 function prompt_git() {
     # check if we're in a git repo. (fast)
     git rev-parse --is-inside-work-tree &>/dev/null || return
@@ -57,11 +52,13 @@ function bash_prompt {
     PS1+="\[\033]0;\w\007\]"
     PS1+=$newline
 
-    # User (\u) and host (\h)
-    PS1+="${RED256}\u ${BSET}at ${ORANGE256}\h ${BSET}in ${YELLOW256}\w${BSET}"
+    # User (\u) and host (\h) and working directory (\w)
+    # PS1+="${RED256}\u ${BSET}at ${ORANGE256}\h ${BSET}in ${YELLOW256}\w${BSET}"
+    PS1+="${YELLOW256}\w${BSET}"
 
     # Git
-    PS1+="\$(prompt_git \" on $PURPLE256\" \"$CYAN256\")"
+    # PS1+="\$(prompt_git \" on $PURPLE256\" \"$CYAN256\") "
+    PS1+="\$(prompt_git \" on $PURPLE256\" \"$CYAN256\") "
     # PS1+="${RED}\u ${RESET}at ${YELLOW}\h ${RESET}in ${GREEN}\w"
 
     # Prompt symbol
