@@ -6,6 +6,7 @@ BOLD=$(tput bold)
 RESET=$(tput sgr0)
 BSET=${RESET}${BOLD}
 
+# 8/16 color
 RED=$(tput setaf 1)
 GREEN=$(tput setaf 2)
 YELLOW=$(tput setaf 3)
@@ -15,11 +16,12 @@ CYAN=$(tput setaf 6)
 
 # 256 color
 RED256=$(tput setaf 124)
-ORANGE256=$(tput setaf 172)
+PINK256=$(tput setaf 209)
+ORANGE256=$(tput setaf 214)
 YELLOW256=$(tput setaf 221)
 PURPLE256=$(tput setaf 162)
 CYAN256=$(tput setaf 37)
-BLUE256=$(tput setaf 69)
+LAVENDER256=$(tput setaf 111)
 
 # Git prompt
 function prompt_git {
@@ -45,7 +47,7 @@ function prompt_git {
     # technique via github.com/git/git/blob/355d4e173/contrib/completion/git-prompt.sh#L472-L475
     dirty=$(git diff --no-ext-diff --quiet --ignore-submodules --exit-code || echo -e "$dirty_indicator")
 
-    echo -e "${BSET}on ${branch_color}${branch_name}${indicator_color}${dirty}";
+    echo -e "${branch_color}${branch_name}${indicator_color}${dirty}";
 
     return
 }
@@ -59,28 +61,28 @@ function bash_prompt {
     # in front of $(), otherwise will just evaluate
     # once and will not update.
     PS1=$BOLD
-    # PS1="" # Cannot use bold/bright colors and default colors with Solarized
 
     # Set window title to working directory (\w)
     PS1+="\[\033]0;\w\007\]"
-    # PS1+=$newline
 
+    # Check if vim subshell
     if [[ $VIM ]]; then
         PS1+="${BLUE256}[vim] "
     fi
 
-    # User (\u) and host (\h)
-    # PS1+="${RED256}\u ${BSET}at ${ORANGE256}\h ${BSET}in ${YELLOW256}\w${BSET}"
-    PS1+="${ORANGE256}\u ${BSET}in "
+    # User (\u)
+    PS1+="${ORANGE256}\u "
+
+    # Only show hostname (\H) if SSH
+    if [[ $SSH_CLIENT ]]; then
+        PS1+="${BSET}at ${PINK256}\H "
+    fi
 
     # Working directory (\w)
-    PS1+="${YELLOW256}\w${BSET} "
-    # PS1+="${GREEN}\w${RESET} "
+    PS1+="${BSET}in ${YELLOW256}\w${BSET} "
 
     # Git
-    # PS1+="\$(prompt_git \"$MAGENTA\" \"$CYAN\") "
-    PS1+="\$(prompt_git \"$PURPLE256\" \"$CYAN256\") "
-    # PS1+="${RED}\u ${RESET}at ${YELLOW}\h ${RESET}in ${GREEN}\w"
+    PS1+="${BSET}on \$(prompt_git \"$PURPLE256\" \"$LAVENDER256\") "
 
     # Prompt symbol
     PS1+=$newline
