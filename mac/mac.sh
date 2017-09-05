@@ -1,11 +1,16 @@
+# Adapted from https://github.com/mathiasbynens/dotfiles/blob/master/.macos
+
+echo "Setting up defaults..."
+
 # Increase trackpad sensitivity (requires restart?)
-defaults write NSGlobalDomain com.apple.trackpad.scaling 3.0
+# defaults write NSGlobalDomain com.apple.trackpad.scaling 3.0
 
 # Increase key repeat rate
 # defaults write NSGlobalDomain KeyRepeat -int 1
 
-# Reduce delay before key repeat (these are a bit too fast for my taste; tweak in sys pref)
-# defaults write NSGlobalDomain InitialKeyRepeat -int 10 
+# Reduce delay before key repeat
+# Commented out; these are a bit too fast for my taste, tweak in sys pref
+# defaults write NSGlobalDomain InitialKeyRepeat -int 10
 
 # Disable automatic capitalization as it’s annoying when typing code
 defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
@@ -60,7 +65,8 @@ defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
 # Finder: show hidden files by default
-#defaults write com.apple.finder AppleShowAllFiles -bool true
+# Commented this out because typically these files should be viewed in terminal
+# defaults write com.apple.finder AppleShowAllFiles -bool true
 
 # Finder: show all filename extensions
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
@@ -72,7 +78,8 @@ defaults write com.apple.finder ShowPathbar -bool true
 defaults write NSGlobalDomain com.apple.springing.enabled -bool true
 
 # Remove the spring loading delay for directories
-defaults write NSGlobalDomain com.apple.springing.delay -float 0
+# Commented out because the delay is nice, but could be shorter
+# defaults write NSGlobalDomain com.apple.springing.delay -float 0
 
 # When performing a search, search the current folder by default
 defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
@@ -93,3 +100,5 @@ defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebK
 
 killall Finder
 killall Dock
+
+echo "Finished. Don't forget to update key repeat speeds, cursor speed, and Caps Lock mapping in Preferences!"
