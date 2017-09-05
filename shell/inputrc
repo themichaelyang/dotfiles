@@ -10,4 +10,4 @@ $if mode=vi
 $endif
 
 # single tab for suggestions
-set show-all-if-ambiguous on
+# set show-all-if-ambiguous on

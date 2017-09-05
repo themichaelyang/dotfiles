@@ -1,9 +1,17 @@
 # Adapted from https://github.com/paulirish/dotfiles
 
-# Colors
+# Text styles
+# tput is better than escape codes!
 BOLD=$(tput bold)
 RESET=$(tput sgr0)
 BSET=${RESET}${BOLD}
+
+RED=$(tput setaf 1)
+GREEN=$(tput setaf 2)
+YELLOW=$(tput setaf 3)
+BLUE=$(tput setaf 4)
+MAGENTA=$(tput setaf 5)
+CYAN=$(tput setaf 6)
 
 # 256 color
 RED256=$(tput setaf 124)
@@ -11,9 +19,15 @@ ORANGE256=$(tput setaf 172)
 YELLOW256=$(tput setaf 221)
 PURPLE256=$(tput setaf 162)
 CYAN256=$(tput setaf 37)
+BLUE256=$(tput setaf 69)
 
 # Git prompt
-function prompt_git() {
+function prompt_git {
+    local dirty_indicator="*"
+
+    local branch_color=$1
+    local indicator_color=$2
+
     # check if we're in a git repo. (fast)
     git rev-parse --is-inside-work-tree &>/dev/null || return
 
@@ -22,17 +36,16 @@ function prompt_git() {
     #   then… get a tracking remote branch or tag
     #   otherwise… get the short SHA for the latest commit
     #   lastly just give up.
-    branchName="$(git symbolic-ref --quiet --short HEAD 2> /dev/null || \
+    local branch_name="$(git symbolic-ref --quiet --short HEAD 2> /dev/null || \
         git describe --all --exact-match HEAD 2> /dev/null || \
         git rev-parse --short HEAD 2> /dev/null || \
         echo '(unknown)')";
 
     # check if it's dirty (slow)
     # technique via github.com/git/git/blob/355d4e173/contrib/completion/git-prompt.sh#L472-L475
-    dirty=$(git diff --no-ext-diff --quiet --ignore-submodules --exit-code || echo -e "*")
+    dirty=$(git diff --no-ext-diff --quiet --ignore-submodules --exit-code || echo -e "$dirty_indicator")
 
-    [ -n "${s}" ] && s=" [${s}]";
-    echo -e "${1}${branchName}${2}$dirty";
+    echo -e "${BSET}on ${branch_color}${branch_name}${indicator_color}${dirty}";
 
     return
 }
@@ -46,19 +59,27 @@ function bash_prompt {
     # in front of $(), otherwise will just evaluate
     # once and will not update.
     PS1=$BOLD
-    # PS1=""
+    # PS1="" # Cannot use bold/bright colors and default colors with Solarized
 
     # Set window title to working directory (\w)
     PS1+="\[\033]0;\w\007\]"
-    PS1+=$newline
+    # PS1+=$newline
 
-    # User (\u) and host (\h) and working directory (\w)
+    if [[ $VIM ]]; then
+        PS1+="${BLUE256}[vim] "
+    fi
+
+    # User (\u) and host (\h)
     # PS1+="${RED256}\u ${BSET}at ${ORANGE256}\h ${BSET}in ${YELLOW256}\w${BSET}"
-    PS1+="${YELLOW256}\w${BSET}"
+    PS1+="${ORANGE256}\u ${BSET}in "
+
+    # Working directory (\w)
+    PS1+="${YELLOW256}\w${BSET} "
+    # PS1+="${GREEN}\w${RESET} "
 
     # Git
-    # PS1+="\$(prompt_git \" on $PURPLE256\" \"$CYAN256\") "
-    PS1+="\$(prompt_git \" on $PURPLE256\" \"$CYAN256\") "
+    # PS1+="\$(prompt_git \"$MAGENTA\" \"$CYAN\") "
+    PS1+="\$(prompt_git \"$PURPLE256\" \"$CYAN256\") "
     # PS1+="${RED}\u ${RESET}at ${YELLOW}\h ${RESET}in ${GREEN}\w"
 
     # Prompt symbol
