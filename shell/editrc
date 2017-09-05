@@ -1,2 +1,5 @@
 # Use vim style keybindings
 bind -v
+
+# Ctrl+K as Esc
+bind "^K" vi-command-mode
