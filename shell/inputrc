@@ -7,7 +7,7 @@ $if mode=vi
   "G": end-of-history
   set keymap vi-insert
   # "jk": vi-movement-mode
-  "\C-K": vi-movement-mode
+  # "\C-K": vi-movement-mode
 $endif
 
 # single tab for suggestions
