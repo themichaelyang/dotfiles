@@ -61,6 +61,11 @@ set mouse=a
 "jk for Esc
 inoremap jk <Esc>
 
+"Remap j, k (arrows) to move based on screen lines
+"This makes editing wrapped text more intuitive
+noremap j gj
+noremap k gk
+
 "Ctrl+s to save
 noremap <silent> <C-S> :update<CR>
 vnoremap <silent> <C-S> <C-C>:update<CR>
