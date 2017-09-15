@@ -20,7 +20,8 @@ set tabstop=2
 set shiftwidth=2
 
 "Set whitespace based on filetype
-autocmd Filetype python setlocal ts=4 sw=4 sts=0 expandtab "4 space tabs in python
+autocmd Filetype python setlocal ts=4 sw=4 sts=0 expandtab "4 space soft tabs in python
+autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0 "8 space hard tabs in Makefiles
 
 "Indentation
 set autoindent                  "Auto Indentation
@@ -42,6 +43,7 @@ set autoread        "Reload files changed outside vim
 set hidden          "http://items.sjbach.com/319/configuring-vim-right
 set secure          "Disable unsafe commands in project .vimrc files
 autocmd BufEnter * silent! lcd %:p:h  "Automatically change working directory to current file
+autocmd BufNewFile,BufRead *.md set filetype=markdown "Set *.md files to filetype markdown
 
 "Source ~/.bashrc in :sh
 set shell=bash\ --login
@@ -49,6 +51,9 @@ set shell=bash\ --login
 "Long Lines
 set nowrap
 set sidescroll=1
+
+"Wrap lines in Markdown files (.md)
+autocmd Filetype markdown setlocal wrap sidescroll=0
 
 "Enable Mouse
 set mouse=a
@@ -100,7 +105,6 @@ fun! <SID>StripTrailingWhitespaces()
 endfun
 
 autocmd FileType c,cpp,java,php,ruby,python autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
-autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
 
 "Auto turn on/off paste mode to preserve indentation on paste
 "https://coderwall.com/p/if9mda/automatically-set-paste-mode-in-vim-when-pasting-in-insert-mode
