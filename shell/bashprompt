@@ -2,6 +2,7 @@
 
 # Text styles
 # tput is better than escape codes!
+# TODO: Check if tput is supported
 BOLD=$(tput bold)
 RESET=$(tput sgr0)
 BSET=${RESET}${BOLD}
@@ -55,52 +56,53 @@ function prompt_git {
 # Bash Prompt
 function bash_prompt {
     local newline="\n"
-    local prompt_symbol="$"
+    local prompt_symbol="\$"
 
     # When calling functions in bash prompt, \ needed
     # in front of $(), otherwise will just evaluate
     # once and will not update.
-    PS1=$BOLD
+    PS1="\[$BOLD\]"
 
     # Set window title to working directory (\w)
     PS1+="\[\033]0;\w\007\]"
 
     # Check if vim subshell
     if [[ $VIM ]]; then
-        PS1+="${BLUE256}[vim] "
+        PS1+="\[${BLUE256}\][vim] "
     fi
 
     # User (\u)
-    PS1+="${ORANGE256}\u "
+    PS1+="\[${ORANGE256}\]\u "
 
     # Only show hostname (\H) if SSH
     if [[ $SSH_CLIENT ]]; then
-        PS1+="${BSET}at ${PINK256}\H "
+        PS1+="\[${BSET}\]at \[${PINK256}\]\H "
     fi
 
     # Working directory (\w)
-    PS1+="${BSET}in ${YELLOW256}\w${BSET} "
+    PS1+="\[${BSET}\]in \[${YELLOW256}\]\w\[${BSET}\] "
 
     # Git
-    PS1+="\$(prompt_git \"$PURPLE256\" \"$LAVENDER256\") "
+    PS1+="\$(prompt_git \"\[$PURPLE256\]\" \"\[$LAVENDER256\]\") "
 
     # Prompt symbol
-    PS1+=$newline
-    PS1+="${BSET}${prompt_symbol} "
-    PS1+=$RESET
+    PS1+="\[$newline\]"
+    PS1+="\[${BSET}\]\[${prompt_symbol}\] \[$RESET\]"
 
     export PS1
 }
 
 # Basic bash prompt
 function basic_bash_prompt {
-  # PS1='\u@\h: \w\n$ '
-  PS1="\n\w$ "
+  PS1='\u @ \H: \w\n$ '
+  # PS1="\n\w$ "
+  # PS1="\w$ "
   export PS1
 }
 
 # Set bash prompt
 bash_prompt
+# basic_bash_prompt
 
 # Remove function
 unset bash_prompt
