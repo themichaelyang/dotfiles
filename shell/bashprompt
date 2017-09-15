@@ -56,12 +56,12 @@ function prompt_git {
 # Bash Prompt
 function bash_prompt {
     local newline="\n"
-    local prompt_symbol="\$"
+    local prompt_symbol="$"
 
     # When calling functions in bash prompt, \ needed
     # in front of $(), otherwise will just evaluate
     # once and will not update.
-    PS1="\[$BOLD\]"
+    PS1="\[${BOLD}\]"
 
     # Set window title to working directory (\w)
     PS1+="\[\033]0;\w\007\]"
@@ -87,8 +87,8 @@ function bash_prompt {
     PS1+="\$(prompt_git \"\[$PURPLE256\]\" \"\[$LAVENDER256\]\") "
 
     # Prompt symbol
-    PS1+="\[$newline\]"
-    PS1+="\[${BSET}\]\[${prompt_symbol}\] \[$RESET\]"
+    PS1+="\[${newline}\]"
+    PS1+="\[${BSET}\]\[${prompt_symbol}\] \[${RESET}\]"
 
     export PS1
 }
