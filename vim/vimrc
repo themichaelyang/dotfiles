@@ -100,6 +100,7 @@ fun! <SID>StripTrailingWhitespaces()
 endfun
 
 autocmd FileType c,cpp,java,php,ruby,python autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
+autocmd FileType Makefile set noexpandtab shiftwidth=8 softtabstop=0
 
 "Auto turn on/off paste mode to preserve indentation on paste
 "https://coderwall.com/p/if9mda/automatically-set-paste-mode-in-vim-when-pasting-in-insert-mode
