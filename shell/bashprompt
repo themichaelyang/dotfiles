@@ -75,10 +75,11 @@ function bash_prompt {
     PS1+="\[${ORANGE256}\]\u "
 
     # Only show hostname (\H) if SSH
-    if [[ $SSH_CLIENT ]]; then
-        PS1+="\[${BSET}\]at \[${PINK256}\]\H "
-    fi
-
+    # if [[ $SSH_CLIENT ]]; then
+        # PS1+="\[${BSET}\]at \[${PINK256}\]\H "
+    # fi
+    PS1+="\[${BSET}\]at \[${PINK256}\]\H "
+    
     # Working directory (\w)
     PS1+="\[${BSET}\]in \[${YELLOW256}\]\w\[${BSET}\] "
 
