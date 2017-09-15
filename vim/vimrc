@@ -53,7 +53,7 @@ set nowrap
 set sidescroll=1
 
 "Wrap lines in Markdown files (.md)
-autocmd Filetype markdown setlocal wrap sidescroll=0
+autocmd Filetype markdown setlocal wrap sidescroll=0 linebreak
 
 "Enable Mouse
 set mouse=a
