@@ -43,8 +43,4 @@ link git/gitconfig .gitconfig
 link git/gitignore-global .gitignore-global
 link git/gitprivate .gitprivate
 
-echo ""
-echo "Sourcing bashrc..."
-source ~/.bashrc
-
-echo "Finished."
+echo "Finished. Don't forget to restart your terminal or source ~/.bashrc!"
