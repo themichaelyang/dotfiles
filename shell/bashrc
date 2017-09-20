@@ -22,6 +22,7 @@ alias back='cd -'
 
 # bookmarks
 alias dotfiles="cd ~/dotfiles"
+alias projects="cd ~/Projects"
 
 # Disable rm, which is very dangerous!
 # Always prefer "trash", or safely rm with "remove"
@@ -52,6 +53,11 @@ alias tidy='find . \( -name ".*.sw?" -or -name ".swp" -or -name ".DS_Store" \) -
 # Prevent Ctrl-S and Ctrl-Q from hanging terminal
 # https://unix.stackexchange.com/questions/72086/ctrl-s-hang-terminal-emulator
 stty -ixon
+
+# Use vim as default editor
+# https://stackoverflow.com/questions/2596805/how-do-i-make-git-use-the-editor-of-my-choice-for-commits
+export VISUAL=vim
+export EDITOR="$VISUAL"
 
 # set -o vi
 # bind '"jk":vi-movement-mode'
