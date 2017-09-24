@@ -9,7 +9,7 @@ brew "wget"
 brew "cowsay"
 
 # Dev
-brew 'bash'
+brew "bash"
 brew "git"
 brew "node"
 brew "vim" args: ["with-override-system-vi"]
@@ -22,9 +22,10 @@ brew "vim" args: ["with-override-system-vi"]
 
 # Apps
 cask "google-chrome"
-cask "firefox"
+# cask "firefox"
 cask "spectacle"
 cask "flux"
 cask "atom"
 cask "iterm2"
 cask "spotify"
+cask "time-out"
