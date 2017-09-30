@@ -2,11 +2,15 @@ tap "caskroom/cask"
 tap "homebrew/bundle"
 tap "homebrew/core"
 
-# Utils
+# System Utils
 brew "coreutils"
 brew "trash"
 brew "wget"
 brew "cowsay"
+
+# Utils
+brew "pandoc"
+cask "basictex"
 
 # Dev
 brew "bash"
