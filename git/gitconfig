@@ -19,3 +19,5 @@
   user = config user.name
   email = config user.email
   hunk = add --patch
+# [credential]
+	# helper = cache --timeout=604800
