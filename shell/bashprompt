@@ -66,6 +66,11 @@ function bash_prompt {
     # Set window title to working directory (\w)
     PS1+="\[\033]0;\w\007\]"
 
+    # Check if ssh
+    if [[ $SSH_CONNECTION ]]; then
+        PS1+="\[${BLUE256}\][ssh] "
+    fi
+
     # Check if vim subshell
     if [[ $VIM ]]; then
         PS1+="\[${BLUE256}\][vim] "
@@ -78,7 +83,9 @@ function bash_prompt {
     # if [[ $SSH_CLIENT ]]; then
         # PS1+="\[${BSET}\]at \[${PINK256}\]\H "
     # fi
-    PS1+="\[${BSET}\]at \[${PINK256}\]\H "
+    # PS1+="\[${BSET}\]at \[${PINK256}\]\H " 
+    # \H only sets hostname once
+    PS1+="\[${BSET}\]at \[${PINK256}\]$(hostname) "
     
     # Working directory (\w)
     PS1+="\[${BSET}\]in \[${YELLOW256}\]\w\[${BSET}\] "
