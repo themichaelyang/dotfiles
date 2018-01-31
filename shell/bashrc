@@ -7,10 +7,10 @@ fi
 source ~/.bashprompt
 
 # ls aliases
-alias l='ls -GFh'
-alias ls='ls -GFh'
-alias la='ls -A'
-alias list='ls -lA'
+alias l='ls --color -GFh'
+alias ls='ls --color -GFh'
+alias la='ls --color -A'
+alias list='ls --color -lA'
 
 # cd aliases
 alias ~='cd ~'
