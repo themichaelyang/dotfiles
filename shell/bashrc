@@ -6,11 +6,14 @@ fi
 # source bash prompt
 source ~/.bashprompt
 
+export CLICOLOR=1
 # ls aliases
-alias l='ls --color -GFh'
-alias ls='ls --color -GFh'
-alias la='ls --color -A'
-alias list='ls --color -lA'
+# Thanks:
+# https://superuser.com/questions/183876/how-do-i-get-ls-color-auto-to-work-on-mac-os-x
+alias l='ls -GFh'
+ls --color=auto &> /dev/null && alias ls='ls --color=auto' || alias ls='ls -GFh'
+alias la='ls -A'
+alias list='ls -lA'
 
 # cd aliases
 alias ~='cd ~'

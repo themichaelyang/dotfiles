@@ -50,11 +50,11 @@ autocmd BufNewFile,BufRead *.md set filetype=markdown "Set *.md files to filetyp
 set shell=bash\ --login
 
 "Long Lines
-set nowrap
-set sidescroll=1
+" set nowrap
+" set sidescroll=1
 
 "Wrap lines in Markdown files (.md)
-autocmd Filetype markdown setlocal wrap sidescroll=0 linebreak
+" autocmd Filetype markdown setlocal wrap sidescroll=0 linebreak
 
 "Enable Mouse
 set mouse=a
