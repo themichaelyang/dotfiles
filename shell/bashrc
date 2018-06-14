@@ -38,6 +38,8 @@ alias mv='mv -i'
 
 # handy dandy
 alias remake='make clean && make'
+alias python='python3'
+alias pip='pip3'
 
 # make directory and switch into it
 # https://unix.stackexchange.com/questions/9123/is-there-a-one-liner-that-allows-me-to-create-a-directory-and-move-into-it-at-th
