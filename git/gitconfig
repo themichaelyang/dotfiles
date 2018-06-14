@@ -19,6 +19,7 @@
   user = config user.name
   email = config user.email
   hunk = add --patch
+  pushme = push origin HEAD
 # [credential]
 	# helper = cache --timeout=604800
 	# helper = osxkeychain
