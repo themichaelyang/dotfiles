@@ -42,5 +42,6 @@ link vim/vimrc .vimrc
 link git/gitconfig .gitconfig
 link git/gitignore-global .gitignore-global
 link git/gitprivate .gitprivate
+link git/git-completion .git-completion
 
 echo "Finished. Don't forget to restart your terminal or source ~/.bashrc!"

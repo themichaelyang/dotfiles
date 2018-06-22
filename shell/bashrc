@@ -3,6 +3,13 @@ if [ -f ~/.bashprivate ]; then
    source ~/.bashprivate
 fi
 
+# source git completion 
+# should really have kept this *.bash
+# also with the install and link scripts
+if [ -f ~/.git-completion ]; then 
+  source ~/.git-completion
+fi
+
 # source bash prompt
 source ~/.bashprompt
 
