@@ -5,7 +5,7 @@
 [core]
   excludesfile = ~/.gitignore-global
 [alias]
-  remove = rm -r --cached .
+  rm-all = rm -r --cached .
   cm = commit -m
   redo = commit --amend
   find = ls-files | find
@@ -20,6 +20,9 @@
   email = config user.email
   hunk = add --patch
   pushme = push origin HEAD
+  delete-branches = "!git branch | grep -v 'master' | xargs git branch -d"
+  delete-remote-tracking = "!git branch -r | grep -v 'master' | xargs git branch -dr"
+
 # [credential]
 	# helper = cache --timeout=604800
 	# helper = osxkeychain
