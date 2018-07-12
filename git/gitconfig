@@ -16,6 +16,9 @@
   st = status
   stat = status
   d = diff
+  ds = diff --staged
+  co = checkout
+  cob = checkout -b
   user = config user.name
   email = config user.email
   hunk = add --patch
