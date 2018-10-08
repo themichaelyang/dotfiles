@@ -25,7 +25,19 @@
   pushme = push origin HEAD
   delete-branches = "!git branch | grep -v 'master' | xargs git branch -d"
   delete-remote-tracking = "!git branch -r | grep -v 'master' | xargs git branch -dr"
-
+[color]
+	branch = auto
+	diff = auto
+	status = auto
+  showbranch = auto
+	ui = true
+# these colors are off a bit since solarized doesn't
+# map cleanly to ANSI
+[color "diff"]
+	meta = yellow 
+	frag = magenta 
+	old = red 
+	new = cyan 
 # [credential]
 	# helper = cache --timeout=604800
 	# helper = osxkeychain
