@@ -62,6 +62,9 @@ set mouse=a
 "jk for Esc
 inoremap jk <Esc>
 
+"Enable backspace in insert mode
+set backspace=indent,eol,start
+
 "Remap j, k (arrows) to move based on screen lines
 "This makes editing wrapped text more intuitive
 noremap j gj
