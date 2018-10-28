@@ -14,6 +14,7 @@ function link {
     fi
 
     if ! [[ -e "$target" ]]; then
+      mkdir -p $(dirname "$target")
         ln -s $origin $target && echo -e "\033[0;32mADDED:\033[0m $target."
     else
         echo -e "\033[0;33mWARNING:\033[0m Target $target already exists."
@@ -43,5 +44,8 @@ link git/gitconfig .gitconfig
 link git/gitignore-global .gitignore-global
 link git/gitprivate .gitprivate
 link git/git-completion .git-completion
+
+# Jupyter
+link notebook/custom.css .jupyter/custom/custom.css
 
 echo "Finished. Don't forget to restart your terminal or source ~/.bashrc!"
