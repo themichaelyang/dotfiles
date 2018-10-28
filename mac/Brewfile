@@ -22,7 +22,9 @@ brew "vim", args: ["with-override-system-vi"]
 # 2) pip -> pip3; pip2 -> pip2
 # These dotfiles set aliases to remap python in the shell
 # to Python 3 and pip to pip3.
-brew "python"
+
+# I think Miniconda comes with python3, so we'll disable this for now
+# brew "python"
 brew "python@2"
 
 # Apps
