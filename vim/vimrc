@@ -20,8 +20,8 @@ set tabstop=2
 set shiftwidth=2
 
 "Set whitespace based on filetype
-autocmd Filetype python setlocal ts=4 sw=4 sts=0 expandtab "4 space soft tabs in python
-autocmd Filetype c setlocal ts=4 sw=4 sts=0 expandtab "4 space soft tabs in c 
+autocmd Filetype python setlocal ts=4 sw=4 sts=0 expandtab       "4 space soft tabs in python
+autocmd Filetype c setlocal ts=4 sw=4 sts=0 expandtab            "4 space soft tabs in c 
 autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0 "8 space hard tabs in Makefiles
 
 "Indentation
@@ -36,6 +36,10 @@ set laststatus=2  "Show statusline
 let g:lightline = {
       \ 'colorscheme': 'solarized',
       \ }
+autocmd InsertEnter,InsertLeave * set cul! "Highlight current line on insert
+"https://stackoverflow.com/questions/6488683/how-do-i-change-the-vim-cursor-in-insert-normal-mode/42118416#42118416
+" let &t_SI = '\e[5 q'                       "Change cursor shape on mode
+" let &t_EI = '\e[2 q'
 "autocmd vimenter * NERDTree  "Automatically enter NERDTree
 
 "Under the Hood
@@ -94,6 +98,9 @@ vnoremap ]] }
 
 "Map tg to move back a vim tab page
 nnoremap tg :tabprevious<CR>
+
+"Map // to search selected text
+vnoremap // y/<C-R>"<CR>
 
 "Ctrl-J, K, L, H to change split
 nnoremap <C-J> <C-W><C-J>
