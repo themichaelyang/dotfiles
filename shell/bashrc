@@ -48,7 +48,6 @@ alias remake='make clean && make'
 alias python='python3'
 alias pip='pip3'
 alias activate='source venv/bin/activate'
-# alias notebook='jupyter notebook'
 
 # make directory and switch into it
 # https://unix.stackexchange.com/questions/9123/is-there-a-one-liner-that-allows-me-to-create-a-directory-and-move-into-it-at-th
@@ -89,7 +88,7 @@ export EDITOR="$VISUAL"
 # added by Miniconda3 installer
 # export PATH="/Users/michaelyang/miniconda3/bin:$PATH"
 
-# absolutely no clue why this works here, and not in bashrc (even with $PATH updated before)
+# absolutely no clue why this works in bash_profile, and not in bashrc (even with $PATH updated before)
 # alias notebook="jupyter notebook"
 
 # [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
