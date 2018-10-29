@@ -28,6 +28,7 @@ echo "Setting up symlinks..."
 
 # Bash!
 link shell/bashrc .bashrc
+link shell/profile .profile
 link shell/bash_profile .bash_profile
 link shell/bashprompt .bashprompt
 link shell/bashprivate .bashprivate

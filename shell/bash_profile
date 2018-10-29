@@ -1,4 +1,5 @@
 # Source .bashrc and .profile instead
+# export PATH="/Users/michaelyang/miniconda3/bin:$PATH"
 
 if [ -f ~/.profile ]; then
    source ~/.profile
@@ -9,7 +10,10 @@ if [ -f ~/.bashrc ]; then
 fi
 
 # added by Miniconda3 installer
-export PATH="/Users/michaelyang/miniconda3/bin:$PATH"
+# export PATH="/Users/michaelyang/miniconda3/bin:$PATH"
+
+# absolutely no clue why this works here, and not in bashrc (even with $PATH updated before)
+# alias notebook='jupyter notebook'
 
 # The next line updates PATH for the Google Cloud SDK.
 # if [ -f '/Users/michaelyang/google-cloud-sdk/path.bash.inc' ]; then source '/Users/michaelyang/google-cloud-sdk/path.bash.inc'; fi
