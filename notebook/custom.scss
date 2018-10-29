@@ -2,6 +2,89 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
+.notebook_app {
+  background-color: white;
+}
+
+#ipython_notebook {
+  img {
+    display: none;
+  }
+  a::after {
+    content: 'Home';
+    font-size: 14px;
+  }
+}
+
+span.save_widget {
+  margin: 0;
+}
+
+#header-container {
+  font-size: 14px;
+}
+
+#notebook_name {
+  font-weight: bold;
+}
+
+span.save_widget span.filename, span.checkpoint_status, span.autosave_status {
+  font-size: inherit;
+}
+
+span.save_widget {
+  height: auto;
+}
+
+#ipython_notebook {
+  font-size: inherit;
+  height: auto;
+  padding: none;
+  line-height: auto;
+}
+
+#notebook-container {
+  box-shadow: none;
+}
+
+.header-bar {
+  display: none;
+}
+
+#menus {
+    background-color: white;
+    border: none;
+}
+
+#menus {
+  .nav > li > a {
+    padding-left: 0px;
+    padding-right: 20px;
+  }
+}
+
+.autosave_status, .checkpoint_status {
+  display: block;
+  float: right;
+}
+
+#save_widget {
+  display: block;
+}
+
+body > #header #header-container {
+  padding: 5px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.notebook_app > #header {
+  padding-bottom: 3px;
+}
+
+#kernel_logo_widget, span#login_widget {
+  display: none;
+}
+
 .CodeMirror {
   font-family: 'SF Mono', Inconsolata, Menlo;
 }
