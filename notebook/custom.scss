@@ -85,6 +85,15 @@ body > #header #header-container {
   display: none;
 }
 
+div.cell {
+  margin-bottom: 20px;
+}
+
 .CodeMirror {
   font-family: 'SF Mono', Inconsolata, Menlo;
+}
+
+div#notebook {
+  font-size: 16px;
+  line-height: 1.5em;
 }

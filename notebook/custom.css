@@ -63,5 +63,12 @@ body > #header #header-container {
 #kernel_logo_widget, span#login_widget {
   display: none; }
 
+div.cell {
+  margin-bottom: 20px; }
+
 .CodeMirror {
   font-family: 'SF Mono', Inconsolata, Menlo; }
+
+div#notebook {
+  font-size: 16px;
+  line-height: 1.5em; }
