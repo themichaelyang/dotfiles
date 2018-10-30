@@ -48,6 +48,10 @@ alias remake='make clean && make'
 alias python='python3'
 alias pip='pip3'
 alias activate='source venv/bin/activate'
+alias notebook='jupyter notebook'
+
+# kill all tmux
+alias tmuxkill="tmux \ls | grep : | cut -d. -f1 | awk '{print substr($1, 0, length($1)-1)}' | xargs kill"
 
 # make directory and switch into it
 # https://unix.stackexchange.com/questions/9123/is-there-a-one-liner-that-allows-me-to-create-a-directory-and-move-into-it-at-th
