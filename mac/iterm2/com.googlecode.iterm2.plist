@@ -17,7 +17,7 @@
 	<key>LoadPrefsFromCustomFolder</key>
 	<true/>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/dotfiles/mac</string>
+	<string>~/dotfiles/mac/iterm2</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
 	<string>{712, 448}</string>
 	<key>NSQuotedKeystrokeBinding</key>
@@ -58,9 +58,9 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 142 606 469 0 0 1440 877 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>269 338 796 486 0 0 1440 877 </string>
+	<string>269 312 796 486 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 77 1440 800 0 0 1440 877 </string>
+	<string>0 98 1440 755 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>176 80 570 402 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -679,7 +679,7 @@
 			<key>Normal Font</key>
 			<string>SFMono-Regular 12</string>
 			<key>Option Key Sends</key>
-			<integer>0</integer>
+			<integer>2</integer>
 			<key>Prompt Before Closing 2</key>
 			<false/>
 			<key>Right Option Key Sends</key>
@@ -792,7 +792,7 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/michaelyang/dotfiles/mac</string>
+	<string>/Users/michaelyang/dotfiles/mac/iterm2</string>
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
 	<key>SUFeedAlternateAppNameKey</key>
