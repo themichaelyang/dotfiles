@@ -37,6 +37,9 @@ link shell/bashprivate .bashprivate
 link shell/inputrc .inputrc
 link shell/editrc .editrc
 
+# Tmux
+link shell/tmux.conf .tmux.conf
+
 # Vim
 link vim/vimrc .vimrc
 
@@ -48,5 +51,6 @@ link git/git-completion .git-completion
 
 # Jupyter
 link notebook/custom.css .jupyter/custom/custom.css
+link notebook/jupyter_notebook_config.py .jupyter/jupyter_notebook_config.py
 
 echo "Finished. Don't forget to restart your terminal or source ~/.bashrc!"

@@ -50,9 +50,6 @@ alias pip='pip3'
 alias activate='source venv/bin/activate'
 alias notebook='jupyter notebook'
 
-# kill all tmux
-alias tmuxkill="tmux \ls | grep : | cut -d. -f1 | awk '{print substr($1, 0, length($1)-1)}' | xargs kill"
-
 # make directory and switch into it
 # https://unix.stackexchange.com/questions/9123/is-there-a-one-liner-that-allows-me-to-create-a-directory-and-move-into-it-at-th
 mkcd () {
@@ -81,18 +78,4 @@ export EDITOR="$VISUAL"
 
 # set -o vi
 # bind '"jk":vi-movement-mode'
-# [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
-
-# MOVED TO .profile:
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-# export PATH="$PATH:$HOME/.rvm/bin"
-
-# added by Miniconda3 installer
-# export PATH="/Users/michaelyang/miniconda3/bin:$PATH"
-
-# absolutely no clue why this works in bash_profile, and not in bashrc (even with $PATH updated before)
-# alias notebook="jupyter notebook"
-
-# [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
