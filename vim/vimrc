@@ -60,7 +60,7 @@ set shell=bash\ --login
 "Wrap lines in Markdown files (.md)
 " autocmd Filetype markdown setlocal wrap sidescroll=0 linebreak
 
-"Enable Mouse
+"Enable mouse
 set mouse=a
 
 "jk for Esc
