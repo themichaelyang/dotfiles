@@ -9,8 +9,9 @@ brew "wget"
 brew "cowsay"
 
 # Utils
+# https://tex.stackexchange.com/questions/974/why-is-the-mactex-distribution-so-large-is-there-anything-smaller-for-os-x
 brew "pandoc"
-# cask "basictex"
+cask "basictex"
 
 # Dev
 brew "bash"
