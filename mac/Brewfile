@@ -7,6 +7,7 @@ brew "coreutils"
 brew "trash"
 brew "wget"
 brew "cowsay"
+brew "direnv"
 
 # Utils
 # https://tex.stackexchange.com/questions/974/why-is-the-mactex-distribution-so-large-is-there-anything-smaller-for-os-x
