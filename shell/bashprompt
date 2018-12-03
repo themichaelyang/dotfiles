@@ -23,6 +23,7 @@ YELLOW256=$(tput setaf 221)
 PURPLE256=$(tput setaf 162)
 CYAN256=$(tput setaf 37)
 LAVENDER256=$(tput setaf 111)
+BLUE256=$(tput setaf 69)
 
 # Git prompt
 function prompt_git {
@@ -70,6 +71,10 @@ function bash_prompt {
     # Check if ssh
     if [[ $SSH_CONNECTION ]]; then
         PS1+="\[${BLUE256}\][ssh] "
+    fi
+
+    if [[ $CONDA_PROMPT_MODIFIER ]]; then
+        PS1+="\[${BLUE256}\]$CONDA_PROMPT_MODIFIER"
     fi
 
     # Check if vim subshell
