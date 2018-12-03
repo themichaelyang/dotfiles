@@ -7,9 +7,13 @@ brew "coreutils"
 brew "trash"
 brew "wget"
 brew "cowsay"
-brew "direnv"
 
 # Utils
+# https://www.devroom.io/2017/03/22/tmux-and-vim-copy-and-paste-on-macos-sierra/
+brew "direnv"
+brew "reattach-to-user-namespace"
+
+# Docs
 # https://tex.stackexchange.com/questions/974/why-is-the-mactex-distribution-so-large-is-there-anything-smaller-for-os-x
 brew "pandoc"
 cask "basictex"

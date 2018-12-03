@@ -141,3 +141,7 @@ augroup reload_vimrc " {
     autocmd!
     autocmd BufWritePost $MYVIMRC source $MYVIMRC
 augroup END " }
+
+"Fix Clipboard w/ tmux
+"https://www.devroom.io/2017/03/22/tmux-and-vim-copy-and-paste-on-macos-sierra/
+set clipboard=unnamed
