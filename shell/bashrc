@@ -50,10 +50,11 @@ alias pip='pip3'
 alias activate='source venv/bin/activate'
 alias notebook='jupyter notebook'
 alias source-bashrc='source ~/.bashrc'
+# may want to run: eval `/usr/libexec/path_helper -s`
+# since macos has additional path info in /etc/paths and paths.d
 
 # tmux
 alias tm='tmux'
-alias tma='tmux attach -t'
 alias tmk='tmux kill-session -t'
 alias tm-killall='tmux kill-server'
 # alias tls='tmux list-sessions'
@@ -88,3 +89,7 @@ export EDITOR="$VISUAL"
 # set -o vi
 # bind '"jk":vi-movement-mode'
 
+# Enable ``conda activate``
+# https://github.com/conda/conda/blob/master/CHANGELOG.md#440-2017-12-20
+. ~/miniconda3/etc/profile.d/conda.sh
+# conda activate base
