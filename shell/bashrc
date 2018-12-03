@@ -92,7 +92,7 @@ export EDITOR="$VISUAL"
 # Enable ``conda activate``
 # https://github.com/conda/conda/blob/master/CHANGELOG.md#440-2017-12-20
 . ~/miniconda3/etc/profile.d/conda.sh
-# conda activate basE
+# conda activate base
 
 # Enable direnv
 eval "$(direnv hook bash)"

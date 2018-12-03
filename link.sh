@@ -37,8 +37,9 @@ link shell/bashprivate .bashprivate
 link shell/inputrc .inputrc
 link shell/editrc .editrc
 
-# Tmux
+# Tmux + Direnv
 link shell/tmux.conf .tmux.conf
+link shell/direnvrc .direnvrc
 
 # Vim
 link vim/vimrc .vimrc
