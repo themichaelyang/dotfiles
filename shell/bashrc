@@ -29,10 +29,11 @@ alias up='cd ..'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias back='cd -'
+alias down='cd $(git rev-parse --show-toplevel)' # cd to current git project root
 
 # bookmarks
-alias dotfiles="cd ~/dotfiles"
-alias projects="cd ~/Projects"
+alias dotfiles='cd ~/dotfiles'
+alias projects='cd ~/Projects'
 
 # Disable rm, which is very dangerous!
 # Always prefer "trash", or safely rm with "remove"
