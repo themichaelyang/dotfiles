@@ -49,6 +49,7 @@ alias remake='make clean && make'
 alias python='python3'
 alias pip='pip3'
 alias activate='source venv/bin/activate'
+alias venv='python3 -m venv'
 alias notebook='jupyter notebook'
 alias source-bashrc='source ~/.bashrc'
 # may want to run: eval `/usr/libexec/path_helper -s`
