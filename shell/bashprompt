@@ -73,11 +73,10 @@ function bash_prompt {
         PS1+="\[${BLUE256}\][ssh] "
     fi
   
-    # Check if Conda: single quotes for reload (TODO: update all to single quote)
+    # Show Conda env: single quotes for reload (TODO: update all to single quote)
     # https://stackoverflow.com/a/5380026/7971276
-    if [[ $CONDA_PROMPT_MODIFIER ]]; then
-        PS1+='\[${BLUE256}\]$CONDA_PROMPT_MODIFIER'
-    fi
+    # No if statement b/c this fn is only executed once!
+    PS1+='\[${BLUE256}\]$CONDA_PROMPT_MODIFIER'
 
     # Check if vim subshell
     if [[ $VIM ]]; then
