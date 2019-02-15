@@ -30,6 +30,7 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias back='cd -'
 alias down='cd $(git rev-parse --show-toplevel)' # cd to current git project root
+cl() { cd "$@" && ls; } # cd and ls
 
 # bookmarks
 alias dotfiles='cd ~/dotfiles'
