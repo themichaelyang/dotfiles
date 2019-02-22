@@ -5,6 +5,7 @@
 [core]
   excludesfile = ~/.gitignore-global
 [alias]
+  rm = "rm is disabled."
   rm-all = rm -r --cached .
   cm = commit -m
   redo = commit --amend
