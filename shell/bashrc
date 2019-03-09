@@ -100,3 +100,8 @@ export EDITOR="$VISUAL"
 
 # Enable direnv
 eval "$(direnv hook bash)"
+
+# Add timestamp to bash_history
+# https://askubuntu.com/questions/391082/how-to-see-time-stamps-in-bash-history
+# Also allows for analytics later!
+export HISTTIMEFORMAT="%d/%m/%y %T "
