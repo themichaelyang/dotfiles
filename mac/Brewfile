@@ -33,8 +33,9 @@ brew "vim", args: ["with-override-system-vi"]
 # brew "python"
 brew "python@2"
 
-# Apps
+# APPS
 cask "google-chrome"
+cask "firefox"
 cask "spectacle"
 cask "flux"
 cask "atom"
@@ -43,4 +44,5 @@ cask "spotify"
 cask "time-out"
 cask "sublime-text"
 cask "figma"
+cask "grandperspective"
 cask "slack"
