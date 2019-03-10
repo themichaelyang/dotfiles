@@ -3,6 +3,7 @@
 # Text styles
 # tput is better than escape codes!
 # TODO: Check if tput is supported
+# TODO: move to local vars!
 BOLD=$(tput bold)
 RESET=$(tput sgr0)
 BSET=${RESET}${BOLD}
@@ -103,8 +104,6 @@ function bash_prompt {
     # Prompt symbol
     PS1+="\[${newline}\]"
     PS1+="\[${BSET}\]\[${prompt_symbol}\] \[${RESET}\]"
-
-    export PS1
 }
 
 # Basic bash prompt
@@ -112,7 +111,6 @@ function basic_bash_prompt {
   PS1='\u @ \H: \w\n$ '
   # PS1="\n\w$ "
   # PS1="\w$ "
-  export PS1
 }
 
 # Set bash prompt
