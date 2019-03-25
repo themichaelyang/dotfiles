@@ -1,3 +1,8 @@
+# lol
+if ! { [ -z $(command -v cowsay) ] && [ -z $(command -v fortune) ]; }; then 
+  fortune | cowsay -f stegosaurus
+fi
+
 # source private dotfile (only if it exists)
 if [ -f ~/.bashprivate ]; then
    source ~/.bashprivate
