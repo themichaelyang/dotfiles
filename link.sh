@@ -52,6 +52,7 @@ link git/git-completion .git-completion
 
 # Jupyter
 link notebook/custom.css .jupyter/custom/custom.css
+link notebook/custom.js .jupyter/custom/custom.js
 link notebook/jupyter_notebook_config.py .jupyter/jupyter_notebook_config.py
 
 echo "Finished. Don't forget to restart your terminal or source ~/.bashrc!"
