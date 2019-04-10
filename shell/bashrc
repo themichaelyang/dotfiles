@@ -58,7 +58,9 @@ alias pip='pip3'
 alias activate='source venv/bin/activate'
 alias venv='python3 -m venv'
 alias notebook='jupyter notebook'
-alias source-bashrc='source ~/.bashrc'
+alias source-bashrc='source ~/.bashrc' # technically you should just use `exec bash`
+# One catch for sourcing again is that if I have some var set to var="a"$var in the bashrc then it will append it again
+
 # may want to run: eval `/usr/libexec/path_helper -s`
 # since macos has additional path info in /etc/paths and paths.d
 
@@ -103,6 +105,8 @@ export EDITOR="$VISUAL"
 # https://github.com/conda/conda/blob/master/CHANGELOG.md#440-2017-12-20
 . ~/miniconda3/etc/profile.d/conda.sh
 # conda activate base
+# I don't conda activate base because env should be by directory
+# Use direnv!
 
 # Enable direnv
 eval "$(direnv hook bash)"
