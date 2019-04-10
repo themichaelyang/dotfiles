@@ -1,0 +1,42 @@
+#!/bin/sh
+
+# UNUSED!
+
+# This script creates monthly backups of the bash history file. Make sure you have
+# HISTSIZE set to large number (more than number of commands you can type in every
+# month). It keeps last 200 commands when it "rotates" history file every month.
+# Typical usage in a bash profile:
+#
+# HISTSIZE=90000
+# source ~/bin/history-backup
+#
+# And to search whole history use:
+# grep xyz -h --color ~/.bash_history.*
+#
+
+# Adapted from:
+# https://lukas.zapletalovi.com/2013/03/never-lost-your-bash-history-again.html
+# Intended only to backup every bash startup.
+
+# Also see: https://news.ycombinator.com/item?id=11806553
+
+# Accepts bash_history file as parameter $1
+function backup_bash_history {
+  local LINES_TO_CARRY=200
+  local BASH_HISTFILE=$1
+  local BACKUP_FILE=$BASH_HISTFILE.$(date +%y%m)
+  
+  if [ -s "$BASH_HISTFILE" -a "$BASH_HISTFILE" -nt "$BACKUP_FILE" ]; then
+    # history file is newer then backup
+    if [[ -f $BACKUP_FILE ]]; then
+      # there is already a backup
+      cp -f $BASH_HISTFILE $BACKUP_FILE
+    else
+      # create new backup, leave last few commands and reinitialize
+      mv -f $BASH_HISTFILE $BACKUP_FILE
+      tail -n$LINES_TO_CARRY $BACKUP_FILE > $BASH_HISTFILE
+      history -r
+    fi
+  fi
+}
+
