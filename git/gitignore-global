@@ -6,6 +6,9 @@
 # Node
 node_modules
 
+# Sass
+.sass-cache
+
 # Compiled source
 ######################
 *.com

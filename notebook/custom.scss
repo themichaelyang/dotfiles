@@ -58,8 +58,13 @@ span.save_widget {
 
 #menus {
   .nav > li > a {
-    padding-left: 0px;
-    padding-right: 20px;
+    // padding-left: 0px;
+    // padding-right: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    // margin-right: 10px;
+    // margin-right: -1px;
+    // border: 1px solid lightgrey;
   }
 }
 
@@ -100,4 +105,13 @@ div#notebook {
 
 div.output_scroll {
   box-shadow: none;
+}
+
+.navbar-default .navbar-nav > .open > a {
+  // background: none;
+  // font-weight: bold;
+}
+
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  // background: none;
 }

@@ -6,7 +6,6 @@ body {
 
 #ipython_notebook img {
   display: none; }
-
 #ipython_notebook a::after {
   content: 'Home';
   font-size: 14px; }
@@ -43,8 +42,8 @@ span.save_widget {
   border: none; }
 
 #menus .nav > li > a {
-  padding-left: 0px;
-  padding-right: 20px; }
+  padding-left: 10px;
+  padding-right: 10px; }
 
 .autosave_status, .checkpoint_status {
   display: block;
@@ -75,3 +74,5 @@ div#notebook {
 
 div.output_scroll {
   box-shadow: none; }
+
+/*# sourceMappingURL=custom.css.map */
