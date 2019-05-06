@@ -43,6 +43,7 @@ link shell/direnvrc .direnvrc
 
 # Vim
 link vim/vimrc .vimrc
+link vim/init.vim .config/nvim/init.vim
 
 # Git
 link git/gitconfig .gitconfig
