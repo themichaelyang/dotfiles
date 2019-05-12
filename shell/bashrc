@@ -54,7 +54,7 @@ alias mv='mv -i'
 # handy dandy
 alias remake='make clean && make'
 alias python='python3'
-alias pip='pip3'
+# alias pip='pip3' # disabled since this was messing with conda's pip; so it was using my pip3 (3.7) instead of the conda pip (3.6)
 alias activate='source venv/bin/activate'
 alias venv='python3 -m venv'
 alias notebook='jupyter notebook'
