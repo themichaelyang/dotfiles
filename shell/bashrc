@@ -1,3 +1,11 @@
+# return early if not interactive shell!
+# for some reason my vim !commands have been calling my bashprompt
+# should probably put just the interactive stuff in here; there's some useful
+# things in bashrc for all scripts
+if ! [[ $- == *i* ]]; then
+  return
+fi
+
 # lol
 # TODO: add to brewfile
 if ! { [ -z $(command -v cowsay) ] && [ -z $(command -v fortune) ] && [ -z $(command -v lolcat) ]; }; then 
