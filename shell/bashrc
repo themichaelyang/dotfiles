@@ -9,7 +9,8 @@ fi
 # lol
 # TODO: add to brewfile
 if ! { [ -z $(command -v cowsay) ] && [ -z $(command -v fortune) ] && [ -z $(command -v lolcat) ]; }; then 
-  fortune | cowsay -f stegosaurus | lolcat
+  # fortune | cowsay -f stegosaurus | lolcat
+  fortune | cowsay -f tux | lolcat
 fi
 
 # source private dotfile (only if it exists)
@@ -111,7 +112,8 @@ export EDITOR="$VISUAL"
 
 # Enable ``conda activate``
 # https://github.com/conda/conda/blob/master/CHANGELOG.md#440-2017-12-20
-. ~/miniconda3/etc/profile.d/conda.sh
+# . ~/miniconda3/etc/profile.d/conda.sh
+source ~/miniconda3/etc/profile.d/conda.sh
 # conda activate base
 # I don't conda activate base because env should be by directory
 # Use direnv!
@@ -141,6 +143,10 @@ shopt -s histappend # hopefully this is what we want? not sure what it does sinc
 shopt -s cmdhist
 PROMPT_COMMAND="if [ \"$(id -u)\" -ne 0 ]; then history -a; fi; HISTFILE=~/.logs/bash-history-\"$(date '+%F')\"; $PROMPT_COMMAND" # only append to history if not root
 
+# Clear history and load history file into history list
+# TODO: fix this!!
+# history -c
+# history -r ~/.logs/bash-history-"$(date '+%F')"
 
 # Backup bash history
 # UNUSED
