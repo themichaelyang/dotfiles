@@ -95,6 +95,10 @@ mkcd () {
   esac
 }
 
+pandoc-pdf() {
+  pandoc $1 --pdf-engine=pdflatex -o $2
+}
+
 # Deletes all vim swap files and .DS_Store
 # TODO: put the clean into a list
 alias tidy='find . \( -name ".*.sw?" -or -name ".swp" -or -name ".DS_Store" \) -delete -print'
