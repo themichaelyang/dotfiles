@@ -4,8 +4,10 @@ call plug#begin('~/.vim/bundle')
 Plug 'iCyMind/NeoSolarized'
 Plug 'itchyny/lightline.vim'        "Status bar
 Plug 'hail2u/vim-css3-syntax'       "CSS3 Syntax
+Plug 'cakebaker/scss-syntax.vim'  "SCSS Syntax
 Plug 'tpope/vim-commentary'         "Comments! (gcc to toggle comment)
 Plug 'terryma/vim-multiple-cursors' "Multiple cursors
+Plug 'elixir-editors/vim-elixir'
 call plug#end()
 
 "Syntax Highlighting
