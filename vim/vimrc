@@ -96,10 +96,10 @@ vnoremap x "_x
 let mapleader = ","
 
 "Map [[ and ]] to { and } (move paragraph)
-nnoremap [[ {
-vnoremap [[ }
-nnoremap ]] }
-vnoremap ]] }
+" nnoremap [[ {
+" vnoremap [[ }
+" nnoremap ]] }
+" vnoremap ]] }
 
 "Map tg to move back a vim tab page
 nnoremap tg :tabprevious<CR>
