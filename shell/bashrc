@@ -118,13 +118,13 @@ export EDITOR="$VISUAL"
 # Enable ``conda activate``
 # https://github.com/conda/conda/blob/master/CHANGELOG.md#440-2017-12-20
 # . ~/miniconda3/etc/profile.d/conda.sh
-[-f '~/miniconda3/etc/profile.d/conda.sh'] && source ~/miniconda3/etc/profile.d/conda.sh
+[ -f '~/miniconda3/etc/profile.d/conda.sh' ] && source ~/miniconda3/etc/profile.d/conda.sh
 # conda activate base
 # I don't conda activate base because env should be by directory
 # Use direnv!
 
 # Enable direnv if installed
-[-x "$(command -v direnv)"] && eval "$(direnv hook bash)"
+[ -x "$(command -v direnv)" ] && eval "$(direnv hook bash)"
 
 # - Add timestamp to bash_history
 #   https://askubuntu.com/questions/391082/how-to-see-time-stamps-in-bash-history
