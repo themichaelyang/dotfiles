@@ -9,7 +9,10 @@ Plug 'tpope/vim-commentary'         "Comments! (gcc to toggle comment)
 Plug 'terryma/vim-multiple-cursors' "Multiple cursors
 Plug 'elixir-editors/vim-elixir'
 Plug 'tpope/vim-surround'
+Plug 'bkad/CamelCaseMotion'
 call plug#end()
+
+let g:camelcasemotion_key = '<leader>' "for CamelCaseMotion
 
 "Syntax Highlighting
 syntax enable
@@ -25,8 +28,8 @@ set tabstop=2
 set shiftwidth=2
 
 "Set whitespace based on filetype
-autocmd Filetype python setlocal ts=4 sw=4 sts=0 expandtab       "4 space soft tabs in python
-autocmd Filetype c setlocal ts=4 sw=4 sts=0 expandtab            "4 space soft tabs in c 
+autocmd FileType python setlocal ts=4 sw=4 sts=0 expandtab       "4 space soft tabs in python
+autocmd FileType c setlocal ts=4 sw=4 sts=0 expandtab            "4 space soft tabs in c 
 autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0 "8 space hard tabs in Makefiles
 set iskeyword-=_ "set _ to a word delimiter
 
@@ -34,6 +37,8 @@ set iskeyword-=_ "set _ to a word delimiter
 set autoindent                  "Auto Indentation
 set smartindent
 filetype plugin indent on       "Turn on filetype detection
+" autocmd FileType elixir let b:did_indent = 1 "Disble elixir auto indent, which is currently broken?
+" autocmd FileType elixir setlocal indentexpr=
 
 "Editor Appearance
 set number        "Line numbers
