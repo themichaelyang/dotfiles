@@ -1,0 +1,57 @@
+{
+  "editor.minimap.enabled": false,
+  "editor.fontFamily": "\"SF Mono\", Menlo, Monaco, 'Courier New', monospace",
+  "workbench.sideBar.location": "left",
+  "vim.insertModeKeyBindings": [
+    {
+      "before": [
+        "j",
+        "k"
+      ],
+      "after": [
+        "<Esc>"
+      ]
+    }
+  ],
+  "window.zoomLevel": 0,
+  "files.associations": {
+    "*.pcss": "scss"
+  },
+  "html.mirrorCursorOnMatchingTag": false,
+  // "vim.useCtrlKeys": false,
+  // "vim.handleKeys": {
+  // "<C-d>": true
+  //
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "j"
+      ],
+      "after": [
+        "g",
+        "j"
+      ]
+    },
+    {
+      "before": [
+        "k"
+      ],
+      "after": [
+        "g",
+        "k"
+      ]
+    }
+  ],
+  "vim.camelCaseMotion.enable": true,
+  "telemetry.enableCrashReporter": false,
+  "update.mode": "manual",
+  "workbench.activityBar.visible": true,
+  "workbench.statusBar.visible": true,
+  "workbench.colorTheme": "Solarized Light",
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  "[markdown]": {
+    "files.trimTrailingWhitespace": false,
+    "files.trimFinalNewlines": false,
+  }
+}
