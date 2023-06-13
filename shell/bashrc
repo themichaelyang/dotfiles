@@ -136,16 +136,16 @@ export EDITOR="$VISUAL"
 # But I would use "history 1" instead of manually constructing the datetime
 # and keep ~./bash_history for history cmd use 
 # I think that current way is fine, but will need to be parsed by above
-HISTTIMEFORMAT="%FT%T  " # ISO datetime followed by two spaces 
-HISTSIZE=90000
+# HISTTIMEFORMAT="%FT%T  " # ISO datetime followed by two spaces 
+# HISTSIZE=90000
 # PROMPT_COMMAND overrides this (tagged with date)
-HISTFILE=~/.logs/bash-history # don't use quotes (won't expand the ~)
-HISTCONTROL=ignorespace
+# HISTFILE=~/.logs/bash-history # don't use quotes (won't expand the ~)
+# HISTCONTROL=ignorespace
 
 # Append history to history file after command (default is after session ends)
 # https://sanctum.geek.nz/arabesque/better-bash-history/
-shopt -s histappend # hopefully this is what we want? not sure what it does since we have history -a in the prompt_command
-shopt -s cmdhist
+# shopt -s histappend # hopefully this is what we want? not sure what it does since we have history -a in the prompt_command
+# shopt -s cmdhist
 # PROMPT_COMMAND="if [ \"$(id -u)\" -ne 0 ]; then history -a; fi; HISTFILE=~/.logs/bash-history-\"$(date '+%F')\"; $PROMPT_COMMAND" # only append to history if not root
 
 # Clear history and load history file into history list
