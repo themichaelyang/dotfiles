@@ -7,3 +7,6 @@ fi
 if [ -f ~/.bashrc ]; then
    source ~/.bashrc
 fi
+
+# Required by Homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"
