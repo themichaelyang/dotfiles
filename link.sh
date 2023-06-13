@@ -44,6 +44,8 @@ link shell/direnvrc .direnvrc
 # Vim
 link vim/vimrc .vimrc
 link vim/init.vim .config/nvim/init.vim
+# Fix for https://github.com/vim/vim/issues/11937
+link vim/sh.vim .vim/syntax/sh.vim
 
 # Git
 link git/gitconfig .gitconfig
