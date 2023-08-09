@@ -64,12 +64,14 @@ alias mv='mv -i'
 alias remake='make clean && make'
 alias python='python3'
 # alias pip='pip3' # disabled since this was messing with conda's pip; so it was using my pip3 (3.7) instead of the conda pip (3.6)
-alias activate='source venv/bin/activate'
+alias activate-venv='source venv/bin/activate'
 alias venv='python3 -m venv'
 alias notebook='jupyter notebook'
 alias source-bashrc='source ~/.bashrc' # technically you should just use `exec bash`
 # One catch for sourcing again is that if I have some var set to var="a"$var in the bashrc then it will append it again
 alias matlab="/Applications/MATLAB_R2019b.app/bin/matlab -nodesktop -nojvm -nosplash"
+alias jekyll="bundle exec jekyll serve"
+alias activate-ruby="chruby ruby"
 
 # may want to run: eval `/usr/libexec/path_helper -s`
 # since macos has additional path info in /etc/paths and paths.d
@@ -125,4 +127,3 @@ export EDITOR="$VISUAL"
 
 # Enable direnv if installed
 [ -x "$(command -v direnv)" ] && eval "$(direnv hook bash)"
-

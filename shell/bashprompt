@@ -73,10 +73,14 @@ function bash_prompt {
     if [[ $SSH_CONNECTION ]]; then
         PS1+="\[${BLUE256}\][ssh] "
     fi
-  
+
+    # Ruby version
+    PS1+='$(if [[ $RUBY_VERSION ]]; then echo "\[${BLUE256}\](ruby $RUBY_VERSION) "; fi)'
+
     # Show Conda env: single quotes for reload (TODO: update all to single quote)
     # https://stackoverflow.com/a/5380026/7971276
-    # No if statement b/c this fn is only executed once!
+    # No if statement b/c this fn is only executed once. The prompt is only
+    # executed once!
     # PS1+='\[${BLUE256}\]$CONDA_PROMPT_MODIFIER'
     # conda config --set changeps1 False
     PS1+='$(if [[ $CONDA_DEFAULT_ENV ]]; then echo "\[${BLUE256}\]($CONDA_DEFAULT_ENV) "; fi)'
