@@ -17,3 +17,4 @@ if [ "$(uname)" == "Darwin" ]; then
   source $HOMEBREW_PREFIX/opt/chruby/share/chruby/chruby.sh
 fi
 
+eval "$(rbenv init - bash)"
