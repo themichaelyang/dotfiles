@@ -70,10 +70,11 @@ alias notebook='jupyter notebook'
 alias source-bashrc='source ~/.bashrc' # technically you should just use `exec bash`
 # One catch for sourcing again is that if I have some var set to var="a"$var in the bashrc then it will append it again
 alias matlab="/Applications/MATLAB_R2019b.app/bin/matlab -nodesktop -nojvm -nosplash"
-alias jekyll="bundle exec jekyll serve"
+alias jekyll-serve="bundle exec jekyll serve"
 alias activate-ruby="chruby ruby"
 alias serve="python3 -m http.server"
-alias esbuild="./node_modules/.bin/esbuild"
+# alias esbuild="./node_modules/.bin/esbuild"
+alias start-ssh-agent='eval "$(ssh-agent -s)"'
 
 # may want to run: eval `/usr/libexec/path_helper -s`
 # since macos has additional path info in /etc/paths and paths.d
