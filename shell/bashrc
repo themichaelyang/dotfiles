@@ -49,7 +49,6 @@ cl() { cd "$@" && ls; } # cd and ls
 
 # bookmarks
 alias dotfiles='cd ~/dotfiles'
-alias projects='cd ~/Projects'
 
 # Disable rm, which is very dangerous!
 # Always prefer "trash", or safely rm with "remove"
@@ -62,18 +61,13 @@ alias mv='mv -i'
 
 # handy dandy
 alias remake='make clean && make'
-alias python='python3'
-# alias pip='pip3' # disabled since this was messing with conda's pip; so it was using my pip3 (3.7) instead of the conda pip (3.6)
 alias activate-venv='source venv/bin/activate'
 alias venv='python3 -m venv'
 alias notebook='jupyter notebook'
 alias source-bashrc='source ~/.bashrc' # technically you should just use `exec bash`
 # One catch for sourcing again is that if I have some var set to var="a"$var in the bashrc then it will append it again
-alias matlab="/Applications/MATLAB_R2019b.app/bin/matlab -nodesktop -nojvm -nosplash"
 alias jekyll-serve="bundle exec jekyll serve"
-alias activate-ruby="chruby ruby"
 alias serve="python3 -m http.server"
-# alias esbuild="./node_modules/.bin/esbuild"
 alias start-ssh-agent='eval "$(ssh-agent -s)"'
 
 # may want to run: eval `/usr/libexec/path_helper -s`
@@ -116,17 +110,3 @@ stty -ixon
 # https://stackoverflow.com/questions/2596805/how-do-i-make-git-use-the-editor-of-my-choice-for-commits
 export VISUAL=vim
 export EDITOR="$VISUAL"
-
-# set -o vi
-# bind '"jk":vi-movement-mode'
-
-# Enable ``conda activate``
-# https://github.com/conda/conda/blob/master/CHANGELOG.md#440-2017-12-20
-# . ~/miniconda3/etc/profile.d/conda.sh
-[ -f '~/miniconda3/etc/profile.d/conda.sh' ] && source ~/miniconda3/etc/profile.d/conda.sh
-# conda activate base
-# I don't conda activate base because env should be by directory
-# Use direnv!
-
-# Enable direnv if installed
-[ -x "$(command -v direnv)" ] && eval "$(direnv hook bash)"
