@@ -45,6 +45,7 @@ link vim/vimrc .vimrc
 link vim/init.vim .config/nvim/init.vim
 # Fix for https://github.com/vim/vim/issues/11937
 link vim/sh.vim .vim/syntax/sh.vim
+link vim/plugins/vim-plug/plug.vim .vim/autoload/plug.vim
 
 # Git
 link git/gitconfig .gitconfig
