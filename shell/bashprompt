@@ -120,8 +120,8 @@ function basic_bash_prompt {
 }
 
 # Set bash prompt
-bash_prompt
 # basic_bash_prompt
+bash_prompt
 
 # Remove function
 unset bash_prompt
