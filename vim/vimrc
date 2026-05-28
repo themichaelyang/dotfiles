@@ -1,18 +1,18 @@
 "Plugins (vim-plug)
 call plug#begin('~/.vim/bundle')
 " Plug 'flazz/vim-colorschemes'       "Colorschemes
-Plug 'iCyMind/NeoSolarized'
-Plug 'itchyny/lightline.vim'        "Status bar
-Plug 'hail2u/vim-css3-syntax'       "CSS3 Syntax
-Plug 'cakebaker/scss-syntax.vim'    "SCSS Syntax
+"Plug 'iCyMind/NeoSolarized'
+"Plug 'itchyny/lightline.vim'        "Status bar
+"Plug 'hail2u/vim-css3-syntax'       "CSS3 Syntax
+"Plug 'cakebaker/scss-syntax.vim'    "SCSS Syntax
 Plug 'tpope/vim-commentary'         "Comments! (gcc to toggle comment)
-Plug 'terryma/vim-multiple-cursors' "Multiple cursors
-Plug 'elixir-editors/vim-elixir'
-Plug 'tpope/vim-surround'
-Plug 'bkad/CamelCaseMotion'
+"Plug 'terryma/vim-multiple-cursors' "Multiple cursors
+"Plug 'elixir-editors/vim-elixir'
+"Plug 'tpope/vim-surround'
+"Plug 'bkad/CamelCaseMotion'
 call plug#end()
 
-let g:camelcasemotion_key = '<leader>' "for CamelCaseMotion
+"let g:camelcasemotion_key = '<leader>' "for CamelCaseMotion
 
 "Syntax Highlighting
 syntax enable
