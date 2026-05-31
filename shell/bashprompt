@@ -1,26 +1,12 @@
 # Adapted from https://github.com/paulirish/dotfiles
 
-# Text styles
-# tput is better than escape codes!
-# TODO: Check if tput is supported
-# TODO: move to local vars!
-BOLD=$(tput bold)
-RESET=$(tput sgr0)
-BSET=${RESET}${BOLD}
-
-# 8/16 color
-RED=$(tput setaf 1)
-GREEN=$(tput setaf 2)
-YELLOW=$(tput setaf 3)
-BLUE=$(tput setaf 4)
-MAGENTA=$(tput setaf 5)
-CYAN=$(tput setaf 6)
-
 # 256 color
 RED256=$(tput setaf 124)
 PINK256=$(tput setaf 209)
 ORANGE256=$(tput setaf 214)
-YELLOW256=$(tput setaf 221)
+# YELLOW256=$(tput setaf 221)
+YELLOW256=$(tput setaf 178)
+# YELLOW256=$(tput setaf 220)
 PURPLE256=$(tput setaf 162)
 CYAN256=$(tput setaf 37)
 LAVENDER256=$(tput setaf 111)
@@ -32,12 +18,13 @@ function prompt_git {
 
     local branch_color=$1
     local indicator_color=$2
+    local prefix=${3:-}  # optional third param: style applied to "on"
 
     # check if we're in a git repo. (fast)
     git rev-parse --is-inside-work-tree &>/dev/null || return
 
     # check for what branch we're on. (fast)
-    #   if… HEAD isn’t a symbolic ref (typical branch),
+    #   if… HEAD isn't a symbolic ref (typical branch),
     #   then… get a tracking remote branch or tag
     #   otherwise… get the short SHA for the latest commit
     #   lastly just give up.
@@ -51,20 +38,43 @@ function prompt_git {
     # dirty=$(git diff --no-ext-diff --quiet --ignore-submodules --exit-code || echo -e "$dirty_indicator")
     dirty=$([[ -z $(git status -s) ]] || echo -e "$dirty_indicator")
 
-    echo -e "${BSET}on ${branch_color}${branch_name}${indicator_color}${dirty}";
+    echo -e "${prefix}on ${branch_color}${branch_name}${indicator_color}${dirty}";
 
     return
 }
 
 # Bash Prompt
+# Pass "bold" to enable bold connective words and prompt symbol
 function bash_prompt {
+    # Text styles
+    # tput is better than escape codes!
+    # TODO: Check if tput is supported
+    local BOLD=$(tput bold)
+    local RESET=$(tput sgr0)
+    local BSET=${RESET}${BOLD}
+
+    # 8/16 color
+    local RED=$(tput setaf 1)
+    local GREEN=$(tput setaf 2)
+    local YELLOW=$(tput setaf 3)
+    local BLUE=$(tput setaf 4)
+    local MAGENTA=$(tput setaf 5)
+    local CYAN=$(tput setaf 6)
+
+    local connector
+    if [[ ${1:-} == bold ]]; then
+        connector=${BSET}
+    else
+        connector=${RESET}
+    fi
+
     local newline="\n"
     local prompt_symbol="$"
 
     # When calling functions in bash prompt, \ needed
     # in front of $(), otherwise will just evaluate
     # once and will not update.
-    PS1="\[${BOLD}\]"
+    PS1=""
 
     # Set window title to working directory (\w)
     PS1+="\[\033]0;\w\007\]"
@@ -83,7 +93,7 @@ function bash_prompt {
     # executed once!
     # PS1+='\[${BLUE256}\]$CONDA_PROMPT_MODIFIER'
     # conda config --set changeps1 False
-    PS1+='$(if [[ $CONDA_DEFAULT_ENV ]]; then echo "\[${BLUE256}\]($CONDA_DEFAULT_ENV) "; fi)'
+    # PS1+='$(if [[ $CONDA_DEFAULT_ENV ]]; then echo "\[${BLUE256}\]($CONDA_DEFAULT_ENV) "; fi)'
 
     # Check if vim subshell
     if [[ $VIM ]]; then
@@ -91,25 +101,25 @@ function bash_prompt {
     fi
 
     # User (\u)
-    PS1+="\[${ORANGE256}\]\u "
+    PS1+="\[${connector}\]\[${ORANGE256}\]\u "
 
     # Only show hostname (\H) if SSH
     if [[ $SSH_CLIENT ]]; then
-        PS1+="\[${BSET}\]at \[${PINK256}\]\H "
+        PS1+="\[${connector}\]at \[${PINK256}\]\H "
     fi
-    # PS1+="\[${BSET}\]at \[${PINK256}\]\H " 
+    # PS1+="\[${connector}\]at \[${PINK256}\]\H "
     # \H only sets hostname once
-    # PS1+="\[${BSET}\]at \[${PINK256}\]$(hostname) "
-    
+    # PS1+="\[${connector}\]at \[${PINK256}\]$(hostname) "
+
     # Working directory (\w)
-    PS1+="\[${BSET}\]in \[${YELLOW256}\]\w\[${BSET}\] "
+    PS1+="\[${connector}\]in \[${YELLOW256}\]\w\[${connector}\] "
 
     # Git
-    PS1+="\$(prompt_git \"\[$PURPLE256\]\" \"\[$LAVENDER256\]\") "
+    PS1+="\$(prompt_git \"\[$PURPLE256\]\" \"\[$LAVENDER256\]\" \"\[${connector}\]\") "
 
     # Prompt symbol
     PS1+="\[${newline}\]"
-    PS1+="\[${BSET}\]\[${prompt_symbol}\] \[${RESET}\]"
+    PS1+="\[${connector}\]\[${prompt_symbol}\] \[${RESET}\]"
 }
 
 # Basic bash prompt
@@ -121,7 +131,11 @@ function basic_bash_prompt {
 
 # Set bash prompt
 # basic_bash_prompt
-bash_prompt
+
+# use bold bash prompt
+# on iterm2 solarized, uncheck profiles>color>bold: "use bright version of ANSI colors for bold text" because the bold colors are actually grey
+bash_prompt bold
+# bash_prompt
 
 # Remove function
 unset bash_prompt

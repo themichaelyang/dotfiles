@@ -3,3 +3,5 @@
 
 # gitignored for privacy
 *private*
+
+.claude
