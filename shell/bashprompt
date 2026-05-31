@@ -105,7 +105,7 @@ function bash_prompt {
 
     # Only show hostname (\H) if SSH
     if [[ $SSH_CLIENT ]]; then
-        PS1+="\[${connector}\]at \[${PINK256}\]\H "
+        PS1+="\[${connector}\]@ \[${PINK256}\]\H "
     fi
     # PS1+="\[${connector}\]at \[${PINK256}\]\H "
     # \H only sets hostname once
@@ -116,6 +116,10 @@ function bash_prompt {
 
     # Git
     PS1+="\$(prompt_git \"\[$PURPLE256\]\" \"\[$LAVENDER256\]\" \"\[${connector}\]\") "
+
+    # timestamp
+    # PS1+="\[$connector\]at \[$GREEN\]\$(date +%H:%M:%S) " 
+    PS1+="\[$connector\]around \[$GREEN\]\$(date +%I:%M\ %p)" 
 
     # Prompt symbol
     PS1+="\[${newline}\]"
