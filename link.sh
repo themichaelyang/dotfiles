@@ -33,6 +33,10 @@ link shell/bash_profile .bash_profile
 link shell/bashprompt .bashprompt
 link shell/bashprivate .bashprivate
 
+# Zsh
+link shell/zshrc .zshrc
+link shell/zshprompt .zshprompt
+
 # Input
 link shell/inputrc .inputrc
 link shell/editrc .editrc

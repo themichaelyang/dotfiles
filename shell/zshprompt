@@ -1,0 +1,77 @@
+# Adapted from bashprompt
+# Uses zsh native prompt sequences and vcs_info for git integration.
+
+autoload -Uz vcs_info
+
+# vcs_info hook: show * if git status -s has any output (staged, unstaged, or untracked)
+# The +vi- prefix is required by vcs_info's hook naming convention.
++vi-git-dirty() {
+    [[ -n $(git status -s 2>/dev/null) ]] && hook_com[misc]='*'
+}
+
+# %m in format strings gives hooks_com[misc]
+# actionformats is used during rebase, merge, cherry-pick, etc. — %a expands to the action name
+# only one format is ever active at a time, so only 0th index is populated
+zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:git:*' formats "on %F{162}%b%F{111}%m%f"
+zstyle ':vcs_info:git:*' actionformats "on %F{162}%b%F{109}|%a%F{111}%m%f"
+zstyle ':vcs_info:git*+set-message:*' hooks git-dirty
+
+precmd_functions+=( vcs_info )
+
+# Zsh Prompt
+# Pass "bold" to enable bold connective words and prompt symbol
+function zsh_prompt {
+    setopt PROMPT_SUBST
+
+    # connector resets foreground and sets style for connective words
+    local connector
+    if [[ ${1:-} == bold ]]; then
+        connector='%f%B'
+    else
+        connector='%f'
+    fi
+
+    PROMPT=""
+
+    # Set window title to working directory (%~)
+    PROMPT+=$'%{\033]0;%~\007%}'
+
+    # Check if ssh
+    if [[ $SSH_CONNECTION ]]; then
+        PROMPT+="%F{69}[ssh] "
+    fi
+
+    # Ruby version
+    PROMPT+='$(if [[ $RUBY_VERSION ]]; then echo "%F{69}(ruby $RUBY_VERSION) "; fi)'
+
+    # Check if vim subshell
+    if [[ $VIM ]]; then
+        PROMPT+="%F{69}[vim] "
+    fi
+
+    # User (%n)
+    PROMPT+="${connector}%F{214}%n "
+
+    # Only show hostname (%M) if SSH
+    if [[ $SSH_CLIENT ]]; then
+        PROMPT+="${connector}@ %F{209}%M "
+    fi
+
+    # Working directory (%~)
+    PROMPT+="${connector}in %F{178}%~${connector} "
+
+    # Git (via vcs_info, updated before each prompt by precmd)
+    # 0 index of vcs_info_msg
+    PROMPT+="\${vcs_info_msg_0_:+${connector}\${vcs_info_msg_0_} }"
+
+    # timestamp
+    PROMPT+="${connector}around %F{2}\$(date +%I:%M\ %p)%f"
+
+    # Prompt symbol
+    PROMPT+=$'\n'
+    PROMPT+="${connector}$ %b%f"
+}
+
+zsh_prompt bold
+unset -f zsh_prompt
