@@ -1,0 +1,65 @@
+# ls aliases
+# Thanks: https://superuser.com/questions/183876/how-do-i-get-ls-color-auto-to-work-on-mac-os-x
+if ls --color=auto &> /dev/null; then
+  alias ls='ls --color=auto'
+fi
+alias l='ls'
+alias la='ls -A'
+alias list='ls -lA'
+
+# cd aliases
+alias c='cd'
+alias up='cd ..'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias back='cd -'
+alias down='cd $(git rev-parse --show-toplevel)'
+cl() { cd "$@" && ls; }
+
+# bookmarks
+alias dotfiles='cd ~/dotfiles'
+
+# Disable rm, which is very dangerous!
+# Always prefer "trash", or safely rm with "remove"
+alias remove='/bin/rm -irv'
+alias rm='echo rm is disabled! Use the commands \"trash\" or \"remove\".'
+
+# force interactive cp and mv
+alias cp='cp -i'
+alias mv='mv -i'
+
+# handy dandy
+alias remake='make clean && make'
+alias activate-venv='source venv/bin/activate'
+alias venv='python3 -m venv'
+alias notebook='jupyter notebook'
+alias jekyll-serve="bundle exec jekyll serve"
+alias serve="python3 -m http.server"
+alias start-ssh-agent='eval "$(ssh-agent -s)"'
+
+# tmux
+alias tm='tmux'
+alias tma='tmux attach -t'
+alias tmk='tmux kill-session -t'
+alias tm-killall='tmux kill-server'
+alias tms='tmux new-session -s'
+
+# make directory and switch into it
+# https://unix.stackexchange.com/questions/9123/is-there-a-one-liner-that-allows-me-to-create-a-directory-and-move-into-it-at-th
+mkcd () {
+  case "$1" in
+    */..|*/../) cd -- "$1";;
+    /*/../*) (cd "${1%/../*}/.." && mkdir -p "./${1##*/../}") && cd -- "$1";;
+    /*) mkdir -p "$1" && cd "$1";;
+    */../*) (cd "./${1%/../*}/.." && mkdir -p "./${1##*/../}") && cd "./$1";;
+    ../*) (cd .. && mkdir -p "${1#.}") && cd "$1";;
+    *) mkdir -p "./$1" && cd "./$1";;
+  esac
+}
+
+pandoc-pdf() {
+  pandoc $1 --pdf-engine=pdflatex -o $2
+}
+
+# Deletes all vim swap files and .DS_Store
+alias tidy='find . \( -name ".*.sw?" -or -name ".swp" -or -name ".DS_Store" \) -delete -print'

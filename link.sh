@@ -26,6 +26,9 @@ function link {
 
 echo "Setting up symlinks..."
 
+# Shared between bash and zsh
+link shell/aliases .aliases
+
 # Bash!
 link shell/bashrc .bashrc
 link shell/profile .profile
@@ -36,6 +39,9 @@ link shell/bashprivate .bashprivate
 # Zsh
 link shell/zshrc .zshrc
 link shell/zshprompt .zshprompt
+
+# Fish
+link fish/config.fish .config/fish/config.fish
 
 # Input
 link shell/inputrc .inputrc
@@ -65,4 +71,4 @@ link notebook/custom.css .jupyter/custom/custom.css
 link notebook/custom.js .jupyter/custom/custom.js
 link notebook/jupyter_notebook_config.py .jupyter/jupyter_notebook_config.py
 
-echo "Finished. Don't forget to restart your terminal or source ~/.bashrc!"
+echo "Finished. Don't forget to exec <your-shell> or source ~/.bashrc!"

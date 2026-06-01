@@ -30,77 +30,13 @@ source ~/.bashprompt
 
 export CLICOLOR=1
 
-# ls aliases
-# Thanks: https://superuser.com/questions/183876/how-do-i-get-ls-color-auto-to-work-on-mac-os-x
-ls --color=auto &> /dev/null && alias ls='ls --color=auto' || # alias ls='ls -GFh'
-alias l='ls'
-alias la='ls -A'
-alias list='ls -lA'
-
-# cd aliases
-alias ~='cd ~'
-alias c='cd'
-alias up='cd ..'
-alias ..='cd ..'
-alias ...='cd ../..'
-alias back='cd -'
-alias down='cd $(git rev-parse --show-toplevel)' # cd to current git project root
-cl() { cd "$@" && ls; } # cd and ls
-
-# bookmarks
-alias dotfiles='cd ~/dotfiles'
-
-# Disable rm, which is very dangerous!
-# Always prefer "trash", or safely rm with "remove"
-alias remove='/bin/rm -irv'
-alias rm='echo rm is disabled! Use the commands \"trash\" or \"remove\".'
-
-# force interactive cp and mv
-alias cp='cp -i'
-alias mv='mv -i'
-
-# handy dandy
-alias remake='make clean && make'
-alias activate-venv='source venv/bin/activate'
-alias venv='python3 -m venv'
-alias notebook='jupyter notebook'
-alias source-bashrc='source ~/.bashrc' # technically you should just use `exec bash`
-# One catch for sourcing again is that if I have some var set to var="a"$var in the bashrc then it will append it again
-alias jekyll-serve="bundle exec jekyll serve"
-alias serve="python3 -m http.server"
-alias start-ssh-agent='eval "$(ssh-agent -s)"'
-
 # may want to run: eval `/usr/libexec/path_helper -s`
 # since macos has additional path info in /etc/paths and paths.d
 
-# tmux
-alias tm='tmux'
-alias tma='tmux attach -t'
-alias tmk='tmux kill-session -t'
-alias tm-killall='tmux kill-server'
-# alias tls='tmux list-sessions'
-alias tms='tmux new-session -s'
+alias ~='cd ~'
+alias source-bashrc='source ~/.bashrc'
 
-# make directory and switch into it
-# https://unix.stackexchange.com/questions/9123/is-there-a-one-liner-that-allows-me-to-create-a-directory-and-move-into-it-at-th
-mkcd () {
-  case "$1" in
-    */..|*/../) cd -- "$1";; # that doesn't make any sense unless the directory already exists
-    /*/../*) (cd "${1%/../*}/.." && mkdir -p "./${1##*/../}") && cd -- "$1";;
-    /*) mkdir -p "$1" && cd "$1";;
-    */../*) (cd "./${1%/../*}/.." && mkdir -p "./${1##*/../}") && cd "./$1";;
-    ../*) (cd .. && mkdir -p "${1#.}") && cd "$1";;
-    *) mkdir -p "./$1" && cd "./$1";;
-  esac
-}
-
-pandoc-pdf() {
-  pandoc $1 --pdf-engine=pdflatex -o $2
-}
-
-# Deletes all vim swap files and .DS_Store
-# TODO: put the clean into a list
-alias tidy='find . \( -name ".*.sw?" -or -name ".swp" -or -name ".DS_Store" \) -delete -print'
+source ~/.aliases
 
 # Prevent Ctrl-S and Ctrl-Q from hanging terminal
 # https://unix.stackexchange.com/questions/72086/ctrl-s-hang-terminal-emulator

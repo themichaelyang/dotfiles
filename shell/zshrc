@@ -1,2 +1,4 @@
 # source zsh prompt
 source ~/.zshprompt
+
+source ~/.aliases
