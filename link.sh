@@ -51,6 +51,9 @@ link vim/init.vim .config/nvim/init.vim
 link vim/sh.vim .vim/syntax/sh.vim
 link vim/plugins/vim-plug/plug.vim .vim/autoload/plug.vim
 
+# Mise
+link mise/config.toml .config/mise/config.toml
+
 # Git
 link git/gitconfig .gitconfig
 link git/gitignore-global .gitignore-global
