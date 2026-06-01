@@ -2,3 +2,5 @@
 source ~/.zshprompt
 
 source ~/.aliases
+
+eval "$(mise activate zsh)"
