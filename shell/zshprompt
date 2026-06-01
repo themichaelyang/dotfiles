@@ -42,7 +42,7 @@ function zsh_prompt {
         PROMPT+="%F{69}[ssh] "
     fi
 
-    # Ruby version
+    # Ruby version (chruby)
     PROMPT+='$(if [[ $RUBY_VERSION ]]; then echo "%F{69}(ruby $RUBY_VERSION) "; fi)'
 
     # Check if vim subshell

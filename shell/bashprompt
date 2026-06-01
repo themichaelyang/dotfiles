@@ -84,7 +84,7 @@ function bash_prompt {
         PS1+="\[${BLUE256}\][ssh] "
     fi
 
-    # Ruby version
+    # Ruby version (chruby)
     PS1+='$(if [[ $RUBY_VERSION ]]; then echo "\[${BLUE256}\](ruby $RUBY_VERSION) "; fi)'
 
     # Show Conda env: single quotes for reload (TODO: update all to single quote)
