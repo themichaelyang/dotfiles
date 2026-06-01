@@ -10,11 +10,5 @@ fi
 
 # For Mac OS
 if [ "$(uname)" == "Darwin" ]; then
-  # Required by Homebrew
-  eval "$(/opt/homebrew/bin/brew shellenv)"
-  
-  # load chruby
-  source $HOMEBREW_PREFIX/opt/chruby/share/chruby/chruby.sh
+    # add Mac OS specific things here
 fi
-
-eval "$(rbenv init - bash)"
