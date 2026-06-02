@@ -23,6 +23,7 @@ function link {
 
 # Remember, if you want to change the filename of any these,
 # update their references in .bashrc, and .gitconfig
+# and unlink the originals
 
 echo "Setting up symlinks..."
 

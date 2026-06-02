@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# TODO: This doesn't work on dotfiles that not at the ~ level.
 echo "WARNING: This script will delete all symlinked dotfiles in ~."
 read -p "Proceed? (y/n): " yn
 case $yn in
