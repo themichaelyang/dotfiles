@@ -58,6 +58,10 @@ link vim/init.vim .config/nvim/init.vim
 link vim/sh.vim .vim/syntax/sh.vim
 link vim/plugins/vim-plug/plug.vim .vim/autoload/plug.vim
 
+# Helix
+link helix/config.toml .config/helix/config.toml
+link helix/languages.toml .config/helix/languages.toml
+
 # Mise, may need to `mise trust`
 link mise/config.toml .config/mise/config.toml
 

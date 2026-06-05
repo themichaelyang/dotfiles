@@ -44,6 +44,9 @@ alias tmk='tmux kill-session -t'
 alias tm-killall='tmux kill-server'
 alias tms='tmux new-session -s'
 
+# helix, to load local configs
+alias hx='hx -c ~/dotfiles/helix/config.local.toml'
+
 # make directory and switch into it
 # https://unix.stackexchange.com/questions/9123/is-there-a-one-liner-that-allows-me-to-create-a-directory-and-move-into-it-at-th
 mkcd () {
