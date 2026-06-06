@@ -9,6 +9,6 @@ if [ -f ~/.bashrc ]; then
 fi
 
 # For Mac OS
-if [ "$(uname)" == "Darwin" ]; then
+# if [ "$(uname)" == "Darwin" ]; then
     # add Mac OS specific things here
-fi
+# fi
