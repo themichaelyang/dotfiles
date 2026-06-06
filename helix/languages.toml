@@ -1,7 +1,10 @@
 [language-server.ruby-lsp]
 command = "ruby-lsp"
-config = { diagnostics = true, formatting = false }
+config = { diagnostics = true, formatting = true }
 
 [[language]]
 name = "ruby"
 language-servers = ["ruby-lsp"]
+auto-format = true
+# Thank you https://www.reddit.com/r/ruby/comments/1ksxpzx/current_working_helix_ruby_config/
+formatter = { command = "rufo", args = ["--simple-exit"] }
