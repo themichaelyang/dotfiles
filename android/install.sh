@@ -26,3 +26,4 @@ else
 fi
 
 pkg install helix
+pkg install termux-api # installs things like termux-clipboard-set
