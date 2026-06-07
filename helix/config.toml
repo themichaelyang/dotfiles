@@ -3,6 +3,8 @@ theme = "dark_high_contrast"
 [keys.insert]
 j = { k = "normal_mode" }
 S-tab = "unindent"
+C-space = "signature_help"
 
-[editor]
-# indent-heuristic = "tree-sitter"
+# https://www.reddit.com/r/HelixEditor/comments/10o7q50/comment/j6deyx8/
+[editor.lsp]
+auto-signature-help = false
