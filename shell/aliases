@@ -15,6 +15,7 @@ alias ...='cd ../..'
 alias back='cd -'
 alias down='cd $(git rev-parse --show-toplevel)'
 cl() { cd "$@" && ls; }
+alias home='cd ~'
 
 # bookmarks
 alias dotfiles='cd ~/dotfiles'
